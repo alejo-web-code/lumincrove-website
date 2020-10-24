@@ -1,0 +1,42 @@
+//colors
+ $white: #F2F2F2;
+ $black: #121212;
+ $primary: #03658C;
+ $primary-light: #3584A3;
+ $primary-dark: #024C69;
+ $cta: #F26D6D;
+ $cta-light: #F58A8A;
+ $cta-dark: #B55252;
+ $soft-blue: #5CACF2;
+ $soft-blue-light: #7DBDF5;
+ $soft-blue-dark: #4581B5;
+ $text-a: $black;
+ $text-b: $white;
+
+ $text-dark: #112E40;
+ $text-dark-light: #415866;
+ $text-dark-strong: #0D2330;
+
+// fonts
+ $font-line-height: 1.5;
+ $font-weight-normal: 400;
+ $font-weight-medium: 500;
+ $font-weight-semibold: 600;
+ $font-weight-bold: 700;
+
+// box size
+ $grid-small-breakpoint: 760px !default;  // Small screen breakpoint for grid.
+ $grid-medium-breakpoint: 920px !default; // Medium screen breakpoint for grid.
+ $grid-large-breakpoint: 1280px !default; // Large screen breakpoint for grid.
+
+//paddings
+ $padding: 1em;
+ $padding-small: 0.5em;
+ $padding-large: 1.5em;
+ $padding-extra: 2em;
+
+//margin
+ $margin: 1em;
+ $margin-small: 0.5em;
+ $margin-large: 1.5em;
+ $margin-extra: 2em;
