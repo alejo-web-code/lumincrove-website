@@ -1,0 +1,63 @@
+@import './variables.scss';
+/*General styles*/
+.block {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/*layout*/
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.btween {
+    justify-content: space-between;
+  }
+}
+
+.w-1 {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.w-2 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.w-3 {
+  flex-basis: 33%;
+  max-width: 33%;
+}
+
+.w-4 {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+/*margings and padings*/
+.margin-small {
+  margin: $margin-small;
+}
+
+.padding-small {
+  padding: $padding-small;
+}
+
+/*Mobile styles*/
+// @media screen and (max-width: $grid-small-breakpoint) {
+
+// }
+
+/*Desktop styles*/
