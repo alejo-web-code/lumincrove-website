@@ -4,6 +4,10 @@
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .hide {
   display: none;
 }
@@ -23,6 +27,9 @@
   }
   &.btween {
     justify-content: space-between;
+  }
+  &.align-center {
+    align-items: center;
   }
 }
 
@@ -46,6 +53,11 @@
   max-width: 25%;
 }
 
+.w-5 {
+  flex-basis: 20%;
+  max-width: 20%;
+}
+
 /*margings and padings*/
 .margin-small {
   margin: $margin-small;
@@ -56,8 +68,15 @@
 }
 
 /*Mobile styles*/
-// @media screen and (max-width: $grid-small-breakpoint) {
-
-// }
+@media screen and (max-width: $grid-small-breakpoint) {
+  .hide-mobile {
+    display: none;
+  }
+}
 
 /*Desktop styles*/
+@media screen and (min-width: $grid-small-breakpoint) {
+  .hide-desktop {
+    display: none;
+  }
+}
