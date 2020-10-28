@@ -70,3 +70,11 @@ h4 {
   font-weight: $font-weight-medium;
   display: block;
 }
+
+a {
+  text-decoration: none;
+}
+
+li a {
+  color: $text-c;
+}

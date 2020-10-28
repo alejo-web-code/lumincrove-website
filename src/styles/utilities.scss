@@ -4,6 +4,10 @@
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .hide {
   display: none;
 }
@@ -21,8 +25,11 @@
   &.column {
     flex-direction: column;
   }
-  &.btween {
+  &.between {
     justify-content: space-between;
+  }
+  &.align-center {
+    align-items: center;
   }
 }
 
@@ -46,18 +53,44 @@
   max-width: 25%;
 }
 
+.w-5 {
+  flex-basis: 20%;
+  max-width: 20%;
+}
+
 /*margings and padings*/
 .margin-small {
   margin: $margin-small;
+}
+
+.m-auto {
+  margin: 0 auto;
 }
 
 .padding-small {
   padding: $padding-small;
 }
 
-/*Mobile styles*/
-// @media screen and (max-width: $grid-small-breakpoint) {
+.padding {
+  padding: $padding;
+}
 
-// }
+/*buttons*/
+.button {
+  background: transparent;
+  border: none;
+}
+
+/*Mobile styles*/
+@media screen and (max-width: $grid-medium-breakpoint) {
+  .hide-mobile {
+    display: none;
+  }
+}
 
 /*Desktop styles*/
+@media screen and (min-width: $grid-medium-breakpoint) {
+  .hide-desktop {
+    display: none;
+  }
+}
