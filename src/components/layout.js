@@ -3,9 +3,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Navigation from './navigation'
 import Footer from './footer'
 import "../styles/core.scss"
+import "../styles/icons.scss"
 import "../styles/utilities.scss"
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,8 +19,10 @@ const Layout = ({children}) => {
 
   return (
     <div>
-      <Navigation />
-      { children }
+      <header>
+        <Navigation />
+      </header>
+      { children}
       <Footer />
     </div>
   )

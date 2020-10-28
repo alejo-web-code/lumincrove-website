@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+.icons-settings {
+	display: block;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	margin: auto;
+}
+
+@mixin icons-size($size) {
+	width: $size;
+	height: $size;
+	background-size: $size $size;
+}
+.menu-icon {
+    @extend .icons-settings;
+	background: url(../../static/assets/menu.svg);
+	@include icons-size(30px);
+}

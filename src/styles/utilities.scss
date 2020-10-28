@@ -25,7 +25,7 @@
   &.column {
     flex-direction: column;
   }
-  &.btween {
+  &.between {
     justify-content: space-between;
   }
   &.align-center {
@@ -63,19 +63,33 @@
   margin: $margin-small;
 }
 
+.m-auto {
+  margin: 0 auto;
+}
+
 .padding-small {
   padding: $padding-small;
 }
 
+.padding {
+  padding: $padding;
+}
+
+/*buttons*/
+.button {
+  background: transparent;
+  border: none;
+}
+
 /*Mobile styles*/
-@media screen and (max-width: $grid-small-breakpoint) {
+@media screen and (max-width: $grid-medium-breakpoint) {
   .hide-mobile {
     display: none;
   }
 }
 
 /*Desktop styles*/
-@media screen and (min-width: $grid-small-breakpoint) {
+@media screen and (min-width: $grid-medium-breakpoint) {
   .hide-desktop {
     display: none;
   }
