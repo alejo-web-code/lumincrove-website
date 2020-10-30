@@ -27,6 +27,36 @@
     &.close {
         left: -100vw;
     }
+
+    .menu {
+        transition: 0.3s ease all;
+        opacity: 1;
+        max-width: 1000px;
+
+        .out {
+            max-width: 0;
+        }
+    }
+
+    .slide-out {
+        transition: 0.3s ease all;
+        transform: scale(0.3);
+        opacity: 0;
+        max-height: 0;
+    }
+    
+    .menu-item {
+        color: $white;
+        font-weight: 600;
+        padding: 1em;
+        margin: 0 1em;
+        border-bottom: 1px #F26D6D solid;
+
+        a {
+            color: $white;
+            font-weight: 600;
+        }
+    }
 }
 
 /*Desktop styles*/
