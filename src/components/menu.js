@@ -19,11 +19,11 @@ function Menu(props) {
 
     if (serviceMenu === 'hiden') {
         menuClass = "text-center menu"
-        submenuClass = "text-center menu out"
+        submenuClass = "text-center submenu out"
     }
     else {
         menuClass = "text-center menu out"
-        submenuClass = " text-center menu"
+        submenuClass = " text-center submenu"
     }
 
     if (openMenu) {

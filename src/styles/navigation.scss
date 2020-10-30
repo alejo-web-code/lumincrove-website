@@ -16,7 +16,23 @@
     padding: 1em 0 0 0;
 }
 
+.nav-over-hide {
+    width: 100%;
+    background:#03658C;
+    height: 0px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.9;
+    overflow: hidden;
+    margin-top: 1em;
+
+    &.show {
+        height: 100px !important;
+    }
+}
+
 .nav-menu {
+    padding: 0 1em 0 1em;
     position: absolute;
 	left: 0;
 	width: 100vw;
@@ -31,10 +47,31 @@
     .menu {
         transition: 0.3s ease all;
         opacity: 1;
-        max-width: 1000px;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left:0;
+        right: 0;
+        &.out {
+            transform: translateX(-100%);
+            overflow: hidden;
+            width: 0;
+        }
+    }
 
-        .out {
-            max-width: 0;
+    .submenu {
+        transition: 0.3s ease all;
+        opacity: 1;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left:0;
+        right: 0;
+
+        &.out {
+            transform: translateX(100%);
+            overflow: hidden;
+            width: 0;
         }
     }
 

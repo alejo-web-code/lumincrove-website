@@ -67,12 +67,20 @@
   margin: 0 auto;
 }
 
+.padding-right {
+  padding-right: 0.5em;
+}
+
 .padding-small {
   padding: $padding-small;
 }
 
 .padding {
   padding: $padding;
+}
+
+.padding-r-l {
+  padding:0 $padding;
 }
 
 /*buttons*/
