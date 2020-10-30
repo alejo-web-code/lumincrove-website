@@ -81,6 +81,11 @@
   border: none;
 }
 
+/*fonts*/
+.text-center {
+  text-align: center;
+}
+
 /*Mobile styles*/
 @media screen and (max-width: $grid-medium-breakpoint) {
   .hide-mobile {
