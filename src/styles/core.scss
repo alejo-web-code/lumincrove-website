@@ -37,8 +37,9 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: $font-line-height;
   display: block;
+  color:  $text-dark;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -69,6 +70,14 @@ h4 {
   line-height: $font-line-height;
   font-weight: $font-weight-medium;
   display: block;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 17px;
 }
 
 a {

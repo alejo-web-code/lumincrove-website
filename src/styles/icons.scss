@@ -7,13 +7,14 @@
 	margin: auto;
 }
 
-@mixin icons-size($size) {
-	width: $size;
-	height: $size;
-	background-size: $size $size;
+@mixin icons-size($size1, $size2) {
+	width: $size1;
+	height: $size2;
+	background-size: $size1 $size2;
 }
+
 .menu-icon {
     @extend .icons-settings;
-	background: url(../../static/assets/menu.svg);
-	@include icons-size(30px);
+	background: url(../../static/assets/menu.png);
+	@include icons-size(25px, 15px);
 }

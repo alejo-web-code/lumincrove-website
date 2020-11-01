@@ -2,8 +2,8 @@
 
 .toggle-menu {
     position: absolute;
-    left: 3%;
-    top: 30%;
+    right: 3%;
+    top: 35%;
     bottom: 35%;
 }
 
@@ -12,16 +12,18 @@
 }
 
 .navbar-section {
-    border-bottom: 1px $text-dark-light solid;
-    padding: 1em 0 0 0;
+    top: 0;
+    padding: 1em 1em 0 1em;
+    background-color: $primary;
 }
 
 .nav-menu {
     position: absolute;
 	left: 0;
-	width: 100vw;
-    height: 75vh;
-    background-color: rgba($color: $primary-dark, $alpha: 0.8);
+    width: 100vw;
+    padding: 2em 0;
+    height: 100vh;
+    background-color: rgba($color: $primary, $alpha: 1);
     z-index: 1;
     transition: 0.3s ease all;
     &.close {
@@ -31,25 +33,20 @@
     .menu {
         transition: 0.3s ease all;
         opacity: 1;
-        max-width: 1000px;
-
-        .out {
-            max-width: 0;
+        transform: scale(1);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        &.out {
+            transform: translateX(-100%);
         }
     }
 
-    .slide-out {
-        transition: 0.3s ease all;
-        transform: scale(0.3);
-        opacity: 0;
-        max-height: 0;
-    }
-    
     .menu-item {
         color: $white;
         font-weight: 600;
         padding: 1em;
-        margin: 0 1em;
+        margin: 0 2em;
         border-bottom: 1px #F26D6D solid;
 
         a {

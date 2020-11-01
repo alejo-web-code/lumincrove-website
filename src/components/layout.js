@@ -18,8 +18,8 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
-      <header>
+    <div className="relative">
+      <header className="sticky top">
         <Navigation />
       </header>
       { children}

@@ -17,6 +17,15 @@
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+  z-index: 2;
+
+  &.top {
+    top: 0;
+  }
+}
+
 .flex {
   display: flex;
   &.center {
@@ -27,6 +36,9 @@
   }
   &.between {
     justify-content: space-between;
+  }
+  &.end {
+    justify-content: flex-end;
   }
   &.align-center {
     align-items: center;
@@ -58,13 +70,36 @@
   max-width: 20%;
 }
 
+.h-100 {
+  height: 100%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-70 {
+  height: 70%;
+}
+
 /*margings and padings*/
 .margin-small {
   margin: $margin-small;
 }
+.margin-bottom {
+  margin-bottom: $margin-extra;
+}
+
+.margin-top {
+  margin-top: $margin-extra;
+}
+
+.m-h-auto {
+  margin: 0 auto;
+}
 
 .m-auto {
-  margin: 0 auto;
+  margin: auto;
 }
 
 .padding-small {
@@ -79,11 +114,31 @@
 .button {
   background: transparent;
   border: none;
+
+  &.cta {
+    display: inline-block;
+    border-radius: 3px;
+    color: $white;
+    padding: 11px 80px;
+    background-color: $cta;
+  }
 }
 
 /*fonts*/
 .text-center {
   text-align: center;
+}
+.text-reversed {
+  color: $white !important;
+}
+
+.color-primary {
+  color:  $soft-blue;
+}
+
+.body-text {
+  font-size: 17px;
+  color:  $text-dark;
 }
 
 /*Mobile styles*/

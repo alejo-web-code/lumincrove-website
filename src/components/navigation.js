@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import Img from 'gatsby-image';
 import Menu from './menu'
@@ -31,8 +31,12 @@ function Navigation() {
         openMenu ? setOpenMenu(false) : setOpenMenu(true)
     }
 
+    useEffect(() => {
+        openMenu ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
+    }, [openMenu])
+
     return (
-        <section className="navbar-section relative">
+        <section className="navbar-section">
             <div className="hide-desktop toggle-menu">
                 <button className="button" onClick={toggleMenu}>
                     <i className="menu-icon"></i>

@@ -1,5 +1,7 @@
 @import './variables.scss';
 
 .home-header-banner {
-    height: 75vh;
+    height: 90vh;
+    padding: $padding-extra $padding;
+    border-bottom: 10px $text-dark solid;
 }

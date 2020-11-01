@@ -27,42 +27,46 @@ function Menu(props) {
     }
 
     if (openMenu) {
-        listClass = "nav-menu text-center flex center"
+        listClass = "nav-menu text-center"
     }
     else {
-        listClass = "nav-menu text-center flex center close"
+        listClass = "nav-menu text-center close"
     }
 
     return (
         <div className={listClass}>
-            <ul className={menuClass}>
-                <li className="menu-item padding-small">
-                    <span onClick={openServices}>Our Services</span>
-                </li>
-                <li className="menu-item padding-small">
-                    <Link to="#">Terms Of Use</Link>
-                </li>
-                <li className="menu-item padding-small">
-                    <Link to="#">Privaci Policy</Link>
-                </li>
-                <li className="menu-item padding-small">
-                    <Link to="#">Blog</Link>
-                </li>
-            </ul>
-            <ul className={submenuClass}>
-                <li className="menu-item padding-small">
-                    <span onClick={closeServices}>Our Services</span>
-                </li>
-                <li className="menu-item padding-small">
-                    <Link to="#">Service 1</Link>
-                </li>
-                <li className="menu-item padding-small">
-                    <Link to="#">Service 2</Link>
-                </li>
-                <li className="menu-item padding-small">
-                    <Link to="#">Service 3</Link>
-                </li>
-            </ul>
+            <div className={menuClass}>
+                <ul>
+                    <li className="menu-item padding-small">
+                        <span onClick={openServices}>Our Services</span>
+                    </li>
+                    <li className="menu-item padding-small">
+                        <Link to="#">Terms Of Use</Link>
+                    </li>
+                    <li className="menu-item padding-small">
+                        <Link to="#">Privaci Policy</Link>
+                    </li>
+                    <li className="menu-item padding-small">
+                        <Link to="#">Blog</Link>
+                    </li>
+                </ul>
+            </div>
+            <div className={submenuClass}>
+                <ul>
+                    <li className="menu-item padding-small">
+                        <span onClick={closeServices}>Our Services</span>
+                    </li>
+                    <li className="menu-item padding-small">
+                        <Link to="#">Service 1</Link>
+                    </li>
+                    <li className="menu-item padding-small">
+                        <Link to="#">Service 2</Link>
+                    </li>
+                    <li className="menu-item padding-small">
+                        <Link to="#">Service 3</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     )
 }
