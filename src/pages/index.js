@@ -34,8 +34,54 @@ const IndexPage = () => {
           }
         }
       }
+      graphIconCarousel: file(relativePath: { eq: "graph-icon.png" }) {
+          childImageSharp {
+            fixed(width: 55) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      improvementCarousel: file(relativePath: { eq: "setting-improve-icon.png" }) {
+          childImageSharp {
+            fixed(width: 55) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      healthyCarousel: file(relativePath: { eq: "health-technology-icon.png" }) {
+          childImageSharp {
+            fixed(width: 55) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
      }   
   `)
+
+  const items = [
+    {
+      image: data.carouselImage.childImageSharp.fluid,
+      icon: data.graphIconCarousel.childImageSharp.fixed,
+      title: 'Do you want your business to be at the top?',
+      content: 'Our mission is to make your ideas come to life, we make sure to focus on what matters most to you. Allow us to build your website using the most current features and trends in the digital world.',
+      index: 0
+    },
+    {
+      image: data.carouselImage.childImageSharp.fluid,
+      icon: data.improvementCarousel.childImageSharp.fixed,
+      title: 'Improving your website',
+      style: 'secondary',
+      content: 'Stay one step ahead of the competition by taking advantage of our platform and keep your site updated and built with a strong infrastructure to ensure visibility and engagement.',
+      index: 1
+    },
+    {
+      image: data.carouselImage.childImageSharp.fluid,
+      icon: data.healthyCarousel.childImageSharp.fixed,
+      title: 'We care about the health of your site',
+      content: 'Quality Assurance is our top priority. Through rigorous checks we make sure you’re getting what you expect.  Allow our professionals to handle it and evaluate your site’s operation, design, speed, issues and other aspects that define its quality.',
+      index: 2
+    }
+  ]
 
   return (
     <Layout>
@@ -62,7 +108,7 @@ const IndexPage = () => {
         </div>
       </BackgroundImage>
       <section>
-        <CarouselInfinite images={data.carouselImage.childImageSharp.fluid} />
+        <CarouselInfinite items={items} />
       </section>
     </Layout>
   )

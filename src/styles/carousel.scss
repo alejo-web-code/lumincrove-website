@@ -6,10 +6,16 @@
     height: 80vh;
     
     .track {
-        height: 100%;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        transition: all 0.5s;
 
         .container {
             height: 100%;
+            min-width: 100%;
         }
     }
 }
@@ -29,7 +35,8 @@
 .item-heading {
     padding: $padding $padding-extra;
 
-    .color-primary {
+    .color-primary,
+    .color-secondary {
         width: 75%;
         margin-left: $margin-small;
     }
@@ -38,6 +45,7 @@
 .item-content {
     padding: 0 2em;
 }
+
 
 .indicators {
     position: absolute;
@@ -61,10 +69,39 @@
         transition: background-color 0.6s ease;
         border: 2px $cta solid;
         outline: none;
+
+        &.active {
+            background-color: $cta-light;
+        }
     }
 
     .active,
     .dot:hover {
         background-color: #717171;
+    }
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
     }
 }
