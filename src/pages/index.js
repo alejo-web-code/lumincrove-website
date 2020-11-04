@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout"
 import Helmet from 'react-helmet';
