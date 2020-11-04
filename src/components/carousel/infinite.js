@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useRef } from 'react';
+import React, { useReducer, useRef } from 'react';
 import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
@@ -128,7 +128,15 @@ function CarouselInfinite(props) {
                         dotClasses += ' active';
                     }
                     return (
-                        <div className={dotClasses} onClick={() => currentSlide(index)} key={index}></div>
+                        <div
+                            className={dotClasses}
+                            onClick={() => currentSlide(index)}
+                            onKeyDown={() => currentSlide(index)}
+                            role="button"
+                            aria-label="carousel indicator"
+                            tabIndex="0"
+                            key={index}>
+                        </div>
                     )
                 })}
             </div>

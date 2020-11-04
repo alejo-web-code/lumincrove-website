@@ -38,7 +38,7 @@ function Menu(props) {
             <div className={menuClass}>
                 <ul>
                     <li className="menu-item padding-small">
-                        <span onClick={openServices}>Our Services</span>
+                        <span onClick={openServices} onKeyDown={openServices} role="presentation">Our Services</span>
                     </li>
                     <li className="menu-item padding-small">
                         <Link to="#">Terms Of Use</Link>
@@ -54,7 +54,7 @@ function Menu(props) {
             <div className={submenuClass}>
                 <ul>
                     <li className="menu-item padding-small">
-                        <span onClick={closeServices}>Our Services</span>
+                        <span onClick={closeServices} onKeyDown={closeServices} role="presentation">Our Services</span>
                     </li>
                     <li className="menu-item padding-small">
                         <Link to="#">Service 1</Link>
