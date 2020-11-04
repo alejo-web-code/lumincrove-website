@@ -31,9 +31,9 @@ const IndexPage = () => {
         childImageSharp {
           fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
+          }
         }
       }
-    }
       carouselImage: file(relativePath: { eq: "carousel-item-1.png" }) {
           childImageSharp {
             fluid(maxWidth: 2000) {
@@ -117,19 +117,15 @@ const IndexPage = () => {
       <section>
         <CarouselInfinite items={items} />
       </section>
-      <section className="hide-desktop">
-        <div>
-      <BackgroundImage tag="section" fluid={data.expertiseImage.childImageSharp.fluid}>
-        <div>
-          <h2 className="color-tittle block text-center padding-top">OUR EXPERTISE</h2>
-          <p className="text-reversed padding-laterals">We work with technologies that achieve high performance and quality values that are highly in demand by current web deelopment standards</p>
+      <BackgroundImage tag="section" className="expertise-section padding padding-top padding-bottom" fluid={data.expertiseImage.childImageSharp.fluid}>
+        <div className="h-70">
+          <h2 className="color-cta text-center margin-bottom-small">OUR EXPERTISE</h2>
+          <p className="text-reversed padding-right padding-left">We work with technologies that achieve high performance and quality values that are highly in demand by current web deelopment standards</p>
         </div>
-        <div className="item-cta text-center margin-bottom padding-btn">
-          <button className="button cta-reversed text-reversed">SEE MORE</button>
+        <div className="text-center">
+          <button className="button cta-reversed">SEE MORE</button>
         </div>
       </BackgroundImage>
-      </div>
-      </section>
     </Layout>
   )
 }
