@@ -7,5 +7,23 @@
 }
 
 .expertise-section {
-    height: 50vh;
+    height: 55vh;
+}
+
+@media screen and (min-width: $grid-small-breakpoint) {
+    .expertise-section {
+        height: 30vh;
+        .h-70 {
+            padding-top: 0 !important;
+            .text-reversed {
+                text-align: center !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $grid-medium-breakpoint) {
+    .expertise-section {
+        height: 40vh;
+    }
 }

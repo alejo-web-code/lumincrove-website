@@ -1,5 +1,5 @@
 import React, { useReducer, useRef } from 'react';
-import { Link } from 'gatsby';
+import ButtonLink from '../buttonLink';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import '../../styles/carousel.scss'
@@ -118,7 +118,7 @@ function CarouselInfinite(props) {
                 })}
             </div>
             <div className="item-cta text-center margin-bottom">
-                <Link to="#" className="button cta">SEE OFFERS</Link>
+                <ButtonLink url="#" style="button cta" name="SEE OFFERS" />
             </div>
             <div className="indicators text-center">
                 {items.map((item, index) => {

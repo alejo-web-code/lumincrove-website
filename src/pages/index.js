@@ -3,6 +3,7 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout"
 import Helmet from 'react-helmet';
+import ButtonLink from '../components/buttonLink';
 import CarouselInfinite from '../components/carousel/infinite'
 import '../styles/home.scss'
 // import Image from "../components/image"
@@ -100,8 +101,8 @@ const IndexPage = () => {
         />
       </Helmet>
       {/* <SEO title="Home" /> */}
-      <BackgroundImage className="home-header-banner text-center padding" tag="main" fluid={data.headerImage.childImageSharp.fluid}>
-        <div className="flex column h-80 margin-top">
+      <BackgroundImage className="home-header-banner responsive text-center padding" tag="main" fluid={data.headerImage.childImageSharp.fluid}>
+        <div className="flex column h-80 w-2 margin-top margin-left">
           <h1>We say: <span className="block">Every business has a code...</span></h1>
           <p className="padding"> because we believe that behind a good project there needs to be a solid, professional and committed team.</p>
           <div className="m-auto">
@@ -109,7 +110,7 @@ const IndexPage = () => {
               <p>You give the idea...</p>
               <h4>We show the results</h4>
             </div>
-            <Link to="#" className="button cta margin-top">GET STARTED</Link>
+            <ButtonLink url="#" style="button cta margin-top" name="GET STARTED"/>
           </div>
         </div>
       </BackgroundImage>
@@ -117,9 +118,11 @@ const IndexPage = () => {
         <CarouselInfinite items={items} />
       </section>
       <BackgroundImage tag="section" className="expertise-section padding padding-top padding-bottom" fluid={data.expertiseImage.childImageSharp.fluid}>
-        <div className="h-70">
+        <div className="h-70 responsive padding-top">
           <h2 className="color-cta text-center margin-bottom-small">OUR EXPERTISE</h2>
-          <p className="text-reversed padding-right padding-left">We work with technologies that achieve high performance and quality values that are highly in demand by current web deelopment standards</p>
+          <div className="w-2 m-h-auto">
+            <p className="text-reversed padding-right padding-left">We work with technologies that achieve high performance and quality values that are highly in demand by current web deelopment standards</p>
+          </div>
         </div>
         <div className="text-center">
           <button className="button cta-reversed">SEE MORE</button>
