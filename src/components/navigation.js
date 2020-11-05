@@ -38,7 +38,7 @@ function Navigation() {
     return (
         <section className="navbar-section">
             <div className="hide-desktop toggle-menu">
-                <button className="button" onClick={toggleMenu}>
+                <button className="button button-menu" onClick={toggleMenu}>
                     <i className="menu-icon"></i>
                 </button>
             </div>
