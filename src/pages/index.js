@@ -8,6 +8,7 @@ import Img from 'gatsby-image';
 import ButtonLink from '../components/buttonLink';
 import CarouselInfinite from '../components/carousel/infinite'
 import '../styles/home.scss'
+import '../styles/modals.scss'
 // import Image from "../components/image"
 // import SEO from "../components/seo"
 
@@ -114,6 +115,9 @@ const IndexPage = () => {
   ];
 
   const [viewportWidth, setViewportWidth] = useState('')
+  const [modalOn, setModalOn] = useState(false)
+  let modalClass;
+  let modalContentClass;
 
   useEffect(() => {
     const handleWindowSizeChange = () => {
@@ -122,8 +126,22 @@ const IndexPage = () => {
 
     handleWindowSizeChange();
     window.addEventListener('resize', handleWindowSizeChange);
+
+    modalOn ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
   })
 
+  const toggleModal = () => {
+    modalOn ? setModalOn(false) : setModalOn(true)
+  }
+
+  if (!modalOn) {
+    modalClass = "modal"
+    modalContentClass = "margin-bottom modal-content"
+  }
+  else {
+    modalClass = "modal open"
+    modalContentClass = "margin-bottom modal-content"
+  }
 
 
   return (
@@ -161,12 +179,12 @@ const IndexPage = () => {
           </div>
         </div>
         <div className="text-center">
-          <button className="button cta-reversed">SEE MORE</button>
+          <button className="button cta-reversed" onClick={toggleModal}>SEE MORE</button>
         </div>
       </BackgroundImage>
       <WhyUs viewportWidth={viewportWidth} />
-      <section className="padding-top">
-        <div className="margin-bottom">
+      <section className={modalClass} aria-hidden="true">
+        <div className={modalContentClass}>
           <div className="flex wrap margin-bottom responsive">
             <div className="w-2 margin-bottom">
               <div className="m-h-auto text-center w-4 border-botton-primary">
@@ -201,10 +219,13 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
+            <div className="button-close" onClick={toggleModal}>
+              <button className="button">&times;</button>
+            </div>
           </div>
-        </div>
-        <div className="text-center margin-bottom">
-          <button className="button cta-reversed color-cta">PREVIOUS PAGE</button>
+          {/* <div className="text-center margin-bottom">
+            <button className="button cta-reversed color-cta">PREVIOUS PAGE</button>
+          </div> */}
         </div>
       </section>
     </Layout>
