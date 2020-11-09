@@ -49,7 +49,7 @@
   &.end {
     justify-content: flex-end;
   }
-  &.warp {
+  &.wrap {
     flex-wrap: wrap;
   }
 }
@@ -91,6 +91,10 @@
   height: 70%;
 }
 
+.h-60 {
+  height: 60px;
+}
+
 /*backgrounds*/
 .bg-primary {
   background-color: $primary;
@@ -101,6 +105,10 @@
 }
 
 /*margings and padings*/
+.margin-large {
+  margin: $margin-large
+}
+
 .margin-small {
   margin: $margin-small;
 }
@@ -127,10 +135,6 @@
 
 .m-auto {
   margin: auto;
-}
-
-.margin-left {
-  margin-left: auto;
 }
 
 .padding-small {
@@ -195,6 +199,19 @@
   }
 }
 
+/*icons*/
+.border-botton-primary {
+  border-bottom: $primary-light 2px solid; 
+}
+
+.border-botton-soft-blue {
+  border-bottom: $soft-blue 2px solid; 
+}
+
+.border-botton-cta {
+  border-bottom: $cta 2px solid;
+}
+
 /*fonts*/
 .text-center {
   text-align: center;
@@ -208,12 +225,17 @@
   color: $white !important;
 }
 
+/*color*/
 .color-primary {
-  color:  $soft-blue;
+  color: $soft-blue;
+}
+
+.color-primary-strong {
+  color: $primary;
 }
 
 .color-cta {
-  color: $cta;
+  color: $cta !important;
 }
 
 .color-secondary {

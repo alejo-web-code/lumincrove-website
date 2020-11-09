@@ -4,6 +4,7 @@ import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout";
 import WhyUs from "../components/whyus"
 import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
 import ButtonLink from '../components/buttonLink';
 import CarouselInfinite from '../components/carousel/infinite'
 import '../styles/home.scss'
@@ -46,6 +47,27 @@ const IndexPage = () => {
           childImageSharp {
             fixed(width: 55) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      toolsImage: file(relativePath: { eq: "develop-tools.png" }) {
+          childImageSharp {
+            fixed(width: 55) {
+              ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      managmentImage: file(relativePath: { eq: "management-net.png" }) {
+          childImageSharp {
+            fixed(width: 55) {
+              ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      websiteImage: file(relativePath: { eq: "website-devices.png" }) {
+          childImageSharp {
+            fixed(width: 55) {
+              ...GatsbyImageSharpFixed
           }
         }
       }
@@ -143,6 +165,48 @@ const IndexPage = () => {
         </div>
       </BackgroundImage>
       <WhyUs viewportWidth={viewportWidth} />
+      <section className="padding-top">
+        <div className="margin-bottom">
+          <div className="flex wrap margin-bottom responsive">
+            <div className="w-2 margin-bottom">
+              <div className="m-h-auto text-center w-4 border-botton-primary">
+                <Img className="margin-bottom-small" fixed={data.managmentImage.childImageSharp.fixed} />
+              </div>
+              <div className="padding-small">
+                <h2 className="text-center margin-bottom-small color-primary-strong">NoSQL Databases</h2>
+                <div className="padding-left padding-right">
+                  <p className="text-left">NoSQL databases are built on a strong object structure which makes it flexible, scalable, and capable of rapidly responding to the data management demands of modern businesses.</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-2 margin-bottom">
+              <div className="m-h-auto text-center w-4 border-botton-soft-blue">
+                <Img className="margin-bottom-small" fixed={data.websiteImage.childImageSharp.fixed} />
+              </div>
+              <div className="padding-small">
+                <h2 className="text-center margin-bottom-small color-primary">Hibrid Websites</h2>
+                <div className="padding-left padding-right">
+                  <p className="text-left">By taking advantage of a strong server side rendering and dynamic sites we’ll make it possible to get a fast, scalable, secure, low cost and multi-platform website. With the features of PWA (Progressive Web Application) which dissipates the barrier between web and native applications.</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-2 margin-bottom m-h-auto">
+              <div className="m-h-auto text-center w-4 border-botton-cta">
+                <Img className="margin-bottom-small" fixed={data.toolsImage.childImageSharp.fixed} />
+              </div>
+              <div className="padding-small">
+                <h2 className="text-center margin-bottom-small color-cta">Strong Tools</h2>
+                <div className="padding-left padding-right">
+                  <p className="text-left">The usage of tools as SSL (Secure Socket Layer) protocol, GTM (google tag manager) and Google Analytics, completes our work and makes it strong, trustworthy, secure, manageable and integrable with others platforms.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-center margin-bottom">
+          <button className="button cta-reversed color-cta">PREVIOUS PAGE</button>
+        </div>
+      </section>
     </Layout>
   )
 }
