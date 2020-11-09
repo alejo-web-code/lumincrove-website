@@ -169,7 +169,7 @@ const IndexPage = () => {
         <div className="margin-bottom">
           <div className="flex margin-bottom">
             <div className="w-2">
-              <div className="flex center h-100 h-60">
+              <div className="flex center h-60">
                 <div className="flex center w-4 border-botton-primary">
                   <Img fixed={data.managmentImage.childImageSharp.fixed} />
                 </div>
@@ -182,7 +182,7 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="w-2">
-              <div className="flex center h-100 h-60">
+              <div className="flex center h-60">
                 <div className="flex center align-center w-4 border-botton-soft-blue">
                   <Img fixed={data.websiteImage.childImageSharp.fixed} />
                 </div>
@@ -196,7 +196,7 @@ const IndexPage = () => {
             </div>
           </div>
           <div className="w-2 m-auto padding-top">
-            <div className="flex center h-100 h-60">
+            <div className="flex center h-60">
               <div className="flex center w-4 border-botton-cta">
                 <Img fixed={data.toolsImage.childImageSharp.fixed} />
               </div>
