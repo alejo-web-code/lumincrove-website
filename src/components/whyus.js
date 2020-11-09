@@ -40,7 +40,7 @@ function WhyUs(props) {
 
     if (viewportWidth > '780') {
         sectionClass = 'bg-white padding-for-section'
-        cardClass = 'responsive margin-bottom flex warp'
+        cardClass = 'responsive margin-bottom flex wrap'
         titleClass = 'color-cta margin-bottom text-center underline text-left'
     }
     else {

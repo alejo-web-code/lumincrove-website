@@ -167,43 +167,39 @@ const IndexPage = () => {
       <WhyUs viewportWidth={viewportWidth} />
       <section className="padding-top">
         <div className="margin-bottom">
-          <div className="flex margin-bottom">
-            <div className="w-2">
-              <div className="flex center h-60">
-                <div className="flex center w-4 border-botton-primary">
-                  <Img fixed={data.managmentImage.childImageSharp.fixed} />
-                </div>
+          <div className="flex wrap margin-bottom responsive">
+            <div className="w-2 margin-bottom">
+              <div className="m-h-auto text-center w-4 border-botton-primary">
+                <Img className="margin-bottom-small" fixed={data.managmentImage.childImageSharp.fixed} />
               </div>
-              <div>
-                <h2 className="text-center padding-small color-primary-strong">NoSQL Databases</h2>
+              <div className="padding-small">
+                <h2 className="text-center margin-bottom-small color-primary-strong">NoSQL Databases</h2>
                 <div className="padding-left padding-right">
-                  <p className="text-center">NoSQL databases are built on a strong object structure which makes it flexible, scalable, and capable of rapidly responding to the data management demands of modern businesses.</p>
+                  <p className="text-left">NoSQL databases are built on a strong object structure which makes it flexible, scalable, and capable of rapidly responding to the data management demands of modern businesses.</p>
                 </div>
               </div>
             </div>
-            <div className="w-2">
-              <div className="flex center h-60">
-                <div className="flex center align-center w-4 border-botton-soft-blue">
-                  <Img fixed={data.websiteImage.childImageSharp.fixed} />
-                </div>
+            <div className="w-2 margin-bottom">
+              <div className="m-h-auto text-center w-4 border-botton-soft-blue">
+                <Img className="margin-bottom-small" fixed={data.websiteImage.childImageSharp.fixed} />
               </div>
-              <div>
-                <h2 className="text-center padding-small color-primary">Hibrid Websites</h2>
+              <div className="padding-small">
+                <h2 className="text-center margin-bottom-small color-primary">Hibrid Websites</h2>
                 <div className="padding-left padding-right">
-                  <p className="text-center">By taking advantage of a strong server side rendering and dynamic sites we’ll make it possible to get a fast, scalable, secure, low cost and multi-platform website. With the features of PWA (Progressive Web Application) which dissipates the barrier between web and native applications.</p>
+                  <p className="text-left">By taking advantage of a strong server side rendering and dynamic sites we’ll make it possible to get a fast, scalable, secure, low cost and multi-platform website. With the features of PWA (Progressive Web Application) which dissipates the barrier between web and native applications.</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-2 m-auto padding-top">
-            <div className="flex center h-60">
-              <div className="flex center w-4 border-botton-cta">
-                <Img fixed={data.toolsImage.childImageSharp.fixed} />
+            <div className="w-2 margin-bottom m-h-auto">
+              <div className="m-h-auto text-center w-4 border-botton-cta">
+                <Img className="margin-bottom-small" fixed={data.toolsImage.childImageSharp.fixed} />
               </div>
-            </div>
-            <div>
-              <h2 className="text-center padding-small color-cta">Strong Tools</h2>
-              <p className="text-center">The usage of tools as SSL (Secure Socket Layer) protocol, GTM (google tag manager) and Google Analytics, completes our work and makes it strong, trustworthy, secure, manageable and integrable with others platforms.</p>
+              <div className="padding-small">
+                <h2 className="text-center margin-bottom-small color-cta">Strong Tools</h2>
+                <div className="padding-left padding-right">
+                  <p className="text-left">The usage of tools as SSL (Secure Socket Layer) protocol, GTM (google tag manager) and Google Analytics, completes our work and makes it strong, trustworthy, secure, manageable and integrable with others platforms.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
