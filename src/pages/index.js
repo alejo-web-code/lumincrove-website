@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
-import Layout from "../components/layout"
+import Layout from "../components/layout";
+import WhyUs from "../components/whyus"
 import Helmet from 'react-helmet';
 import ButtonLink from '../components/buttonLink';
 import CarouselInfinite from '../components/carousel/infinite'
@@ -88,7 +89,20 @@ const IndexPage = () => {
       content: 'Quality Assurance is our top priority. Through rigorous checks we make sure you’re getting what you expect.  Allow our professionals to handle it and evaluate your site’s operation, design, speed, issues and other aspects that define its quality.',
       index: 2
     }
-  ]
+  ];
+
+  const [viewportWidth, setViewportWidth] = useState('')
+
+  useEffect(() => {
+    const handleWindowSizeChange = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    handleWindowSizeChange();
+    window.addEventListener('resize', handleWindowSizeChange);
+  })
+
+
 
   return (
     <Layout>
@@ -110,7 +124,7 @@ const IndexPage = () => {
               <p>You give the idea...</p>
               <h4>We show the results</h4>
             </div>
-            <ButtonLink url="#" style="button cta margin-top" name="GET STARTED"/>
+            <ButtonLink url="#" style="button cta margin-top" name="GET STARTED" />
           </div>
         </div>
       </BackgroundImage>
@@ -128,6 +142,7 @@ const IndexPage = () => {
           <button className="button cta-reversed">SEE MORE</button>
         </div>
       </BackgroundImage>
+      <WhyUs viewportWidth={viewportWidth} />
     </Layout>
   )
 }

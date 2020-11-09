@@ -49,6 +49,9 @@
   &.end {
     justify-content: flex-end;
   }
+  &.warp {
+    flex-wrap: wrap;
+  }
 }
 
 .w-1 {
@@ -88,6 +91,15 @@
   height: 70%;
 }
 
+/*backgrounds*/
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
 /*margings and padings*/
 .margin-small {
   margin: $margin-small;
@@ -103,6 +115,10 @@
 
 .margin-top {
   margin-top: $margin-extra;
+}
+
+.margin-top-small {
+  margin-top: $margin;
 }
 
 .m-h-auto {
@@ -133,12 +149,20 @@
   padding-top: $padding-extra;
 }
 
+.padding-top-small {
+  padding-top: $padding;
+}
+
 .padding-left {
   padding-left: 1em;
 }
 
 .padding-right {
   padding-right: 1em;
+}
+
+.padding-for-section {
+  padding: 4em 2em;
 }
 
 /*buttons*/
@@ -165,12 +189,21 @@
     border-radius: 3px;
     cursor: pointer;
   }
+
+  &.button-get {
+    padding: 9px 70px;
+  }
 }
 
 /*fonts*/
 .text-center {
   text-align: center;
 }
+
+.text-left {
+  text-align: left;
+}
+
 .text-reversed {
   color: $white !important;
 }
@@ -192,6 +225,10 @@
   color:  $text-dark;
 }
 
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
 
 
 /*Mobile styles*/
@@ -205,6 +242,7 @@
     > [class*='w-'] {
       max-width: 100%;
       min-height: 1px;
+      width: 100%;
     }
   }
 }
