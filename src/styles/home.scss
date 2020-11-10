@@ -56,6 +56,10 @@
     transition: 0.4s ease all;
 }
 
+.banner-imagen {
+    height: 200px;
+}
+
 @media screen and (min-width: $grid-small-breakpoint) {
     .expertise-section {
         height: 30vh;
