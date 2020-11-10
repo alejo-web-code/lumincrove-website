@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import '../../styles/carousel.scss'
 
 function CarouselInfinite(props) {
-    const { items } = props;
+    const { items, width } = props;
     const trackRef = useRef(null);
     const [trackState, setTrackState] = useReducer((state, newState) => ({ ...state, ...newState }), {
         prevIndex: 5,
@@ -20,7 +20,7 @@ function CarouselInfinite(props) {
         if (trackState.direction === -1) {
             trackRef.current.className = "track flex start"
         }
-        trackRef.current.style.transform = 'translateX(-375px)';
+        trackRef.current.style.transform = `translateX(-${width}px)`;
         let indexBefore = trackState.trackIndex;
 
         if (trackState.prevIndex === 5) {
@@ -45,7 +45,7 @@ function CarouselInfinite(props) {
         if (trackState.direction === 1) {
             trackRef.current.className = "track flex end"
         }
-        trackRef.current.style.transform = 'translateX(375px)'
+        trackRef.current.style.transform = `translateX(${width}px)`
         let indexBefore = trackState.trackIndex;
 
         setTrackState({

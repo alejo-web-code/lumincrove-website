@@ -92,7 +92,7 @@
 }
 
 .h-60 {
-  height: 60px;
+  height: 60%;
 }
 
 /*backgrounds*/
@@ -123,6 +123,14 @@
 
 .margin-top {
   margin-top: $margin-extra;
+}
+
+.margin-left {
+  margin-left: $margin;
+}
+
+.margin-right {
+  margin-right: $margin;
 }
 
 .margin-top-small {
@@ -158,11 +166,11 @@
 }
 
 .padding-left {
-  padding-left: 1em;
+  padding-left: $padding;
 }
 
 .padding-right {
-  padding-right: 1em;
+  padding-right: $padding;
 }
 
 .padding-for-section {

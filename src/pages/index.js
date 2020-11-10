@@ -118,6 +118,7 @@ const IndexPage = () => {
   const [modalOn, setModalOn] = useState(false)
   let modalClass;
   let modalContentClass;
+  let whatWeDo;
 
   useEffect(() => {
     const handleWindowSizeChange = () => {
@@ -141,6 +142,41 @@ const IndexPage = () => {
   else {
     modalClass = "modal open"
     modalContentClass = "margin-bottom modal-content"
+  }
+
+  if (viewportWidth < '910') {
+    whatWeDo = (
+      <CarouselInfinite items={items} width={viewportWidth} />
+    )
+  }
+  else {
+    whatWeDo = (
+      <div className="flex center padding-left padding-right padding-top padding-bottom margin-bottom">
+        {items.map((element, index) => {
+          let titleClass = element.style ? "color-secondary inline-block" : "color-primary inline-block";
+
+          return (
+            <div className="w-3 flex column padding" key={index}>
+              <BackgroundImage className="banner-imagen flex column end" tag="div" fluid={element.image}>
+                <h2 className="text-reversed padding">WHAT WE DO</h2>
+              </BackgroundImage>
+              <div className="margin-top h-60">
+                <div className="flex align-center">
+                  <Img fixed={element.icon} className="margin-right" />
+                  <h4 className={titleClass}>{element.title}</h4>
+                </div>
+                <div className="">
+                  <p>{element.content}</p>
+                </div>
+              </div>
+              <div className="text-center">
+                <ButtonLink url="#" style="button cta margin-top" name="SEE OFFERS" />
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    )
   }
 
 
@@ -169,7 +205,7 @@ const IndexPage = () => {
         </div>
       </BackgroundImage>
       <section>
-        <CarouselInfinite items={items} />
+        {whatWeDo}
       </section>
       <BackgroundImage tag="section" className="expertise-section padding padding-top padding-bottom" fluid={data.expertiseImage.childImageSharp.fluid}>
         <div className="h-70 responsive padding-top">
