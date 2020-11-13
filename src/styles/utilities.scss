@@ -37,6 +37,9 @@
   &.between {
     justify-content: space-between;
   }
+  &.evenly {
+    justify-content: space-evenly;
+  }
   &.end {
     justify-content: flex-end;
   }
@@ -229,6 +232,10 @@
   text-align: left;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-reversed {
   color: $white !important;
 }
@@ -259,6 +266,24 @@
   font-weight: $font-weight-bold;
 }
 
+/*inputs*/
+.input-container {
+  .input,
+  .textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    padding: $padding-small
+  }
+
+  .textarea {
+    height: 150px;
+  }
+
+  .label {
+    margin-bottom: $margin-small;
+  }
+}
 
 
 /*Mobile styles*/

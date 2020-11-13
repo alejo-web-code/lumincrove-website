@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+.site-footer {
+    padding: $padding-extra $padding $padding $padding;
+}
+
+.footer-link {
+    margin: $margin-small 0;
+}

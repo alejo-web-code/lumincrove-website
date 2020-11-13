@@ -18,3 +18,33 @@
 	background: url(../../static/assets/menu.png);
 	@include icons-size(25px, 15px);
 }
+
+.social-icon {
+	@extend .icons-settings;
+	@include icons-size(30px, 30px);
+
+	&.facebook-icon-reversed {
+		background: url(../../static/assets/facebook-icon-reversed.svg);
+	}
+	&.instagram-icon-reversed {
+		background: url(../../static/assets/instagram-icon-reversed.svg);
+	}
+	&.email-icon-reversed {
+		background: url(../../static/assets/email-icon-reversed.svg);
+	}
+	&.linkedin-icon-reversed {
+		background: url(../../static/assets/likedin-icon-reversed.svg);
+	}
+	// &.facebook-icon {
+	// 	background: url(../../static/assets/facebook-icon.svg);
+	// }
+	// &.instagram-icon {
+	// 	background: url(../../static/assets/instagram-icon.svg);
+	// }
+	// &.email-icon {
+	// 	background: url(../../static/assets/email-icon.svg);
+	// }
+	// &.linkedin-icon {
+	// 	background: url(../../static/assets/likedin-icon.svg);
+	// }
+}
