@@ -124,6 +124,10 @@
   margin-bottom: $margin;
 }
 
+.margin-bottom-tiny {
+  margin-bottom: $margin-small;
+}
+
 .margin-top {
   margin-top: $margin-extra;
 }
@@ -158,6 +162,10 @@
 
 .padding-bottom {
   padding-bottom: $padding-extra;
+}
+
+.padding-bottom-small {
+  padding-bottom: $padding;
 }
 
 .padding-top {
@@ -240,6 +248,14 @@
   color: $white !important;
 }
 
+.text-responsive-align {
+  text-align: left;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
 /*color*/
 .color-primary {
   color: $soft-blue;
@@ -260,10 +276,6 @@
 .body-text {
   font-size: 17px;
   color:  $text-dark;
-}
-
-.text-bold {
-  font-weight: $font-weight-bold;
 }
 
 /*inputs*/
@@ -314,5 +326,9 @@
 
   .button {
     padding: 5px 45px;
+  }
+
+  .text-responsive-align {
+    text-align: center;
   }
 }

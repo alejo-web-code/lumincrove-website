@@ -24,11 +24,11 @@ const Footer = () => {
                                 <label for="name" className="block text-reversed label">Company</label>
                                 <input className="input" type="text" value="" placeholder="Your company" name="company" />
                             </div>
-                            <div className="input-container margin-bottom-small">
+                            <div className="input-container margin-bottom">
                                 <label for="name" className="block text-reversed label">Comments/ Questions *</label>
                                 <textarea className="textarea" value="" placeholder="Let your comment" name="comments" />
                             </div>
-                            <div className="text-center">
+                            <div className="text-center margin-bottom">
                                 <button className="button cta">GET STARTED</button>
                             </div>
                         </form>
@@ -49,15 +49,15 @@ const Footer = () => {
                     </div>
                     <div className="w-4 flex evenly padding">
                         <div className="text-left">
-                            <Link to="#" className="text-reversed inline-block footer-link">Terms of Use</Link>
-                            <Link to="#" className="text-reversed inline-block footer-link">Privacy Polcy</Link>
-                            <Link to="#" className="text-reversed inline-block footer-link">Blog</Link>
-                            <Link to="#" className="text-reversed inline-block footer-link">Contact Us</Link>
+                            <Link to="#" className="text-reversed block footer-link">Terms of Use</Link>
+                            <Link to="/privacy-policy" className="text-reversed block footer-link">Privacy Polcy</Link>
+                            <Link to="#" className="text-reversed block footer-link">Blog</Link>
+                            <Link to="#" className="text-reversed block footer-link">Contact Us</Link>
                         </div>
                         <div className="text-right">
-                            <Link to="#" className="text-reversed inline-block footer-link">Web Design</Link>
-                            <Link to="#" className="text-reversed inline-block footer-link">Web Migration</Link>
-                            <Link to="#" className="text-reversed inline-block footer-link">Sysytem Operation</Link>
+                            <Link to="#" className="text-reversed block footer-link">Web Design</Link>
+                            <Link to="#" className="text-reversed block footer-link">Web Migration</Link>
+                            <Link to="#" className="text-reversed block footer-link">Sysytem Operation</Link>
                         </div>
                     </div>
                 </div>

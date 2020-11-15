@@ -86,8 +86,51 @@ const IndexPage = () => {
           }
         }
       }
+      teamManagerMobileImage: file(relativePath: { eq: "management.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      teamManagerDesktopImage: file(relativePath: { eq: "management-desktop.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      enriqueContactImage: file(relativePath: { eq: "enrique-profile.png" }) {
+          childImageSharp {
+            fixed(width: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      alejandroContactImage: file(relativePath: { eq: "alejandro-profile.png" }) {
+          childImageSharp {
+            fixed(width: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      placeholderImage: file(relativePath: { eq: "placeholder.png" }) {
+          childImageSharp {
+            fixed(width: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }   
   `)
+
+  const sources = [
+    data.teamManagerMobileImage.childImageSharp.fluid,
+    {
+      ...data.teamManagerDesktopImage.childImageSharp.fluid,
+      media: `(min-width: 768px)`
+    }
+  ]
 
   const items = [
     {
@@ -114,8 +157,9 @@ const IndexPage = () => {
     }
   ];
 
-  const [viewportWidth, setViewportWidth] = useState('')
-  const [modalOn, setModalOn] = useState(false)
+  const [viewportWidth, setViewportWidth] = useState('');
+  const [modalOn, setModalOn] = useState(false);
+  const [contactModal, setContactModal] = useState('');
   let modalClass;
   let modalContentClass;
   let whatWeDo;
@@ -133,6 +177,12 @@ const IndexPage = () => {
 
   const toggleModal = () => {
     modalOn ? setModalOn(false) : setModalOn(true)
+  }
+
+  const openContactModal = (e) => {
+    if (e.target.id !== 'placeholder') {
+      setContactModal(e.target.id)
+    }
   }
 
   if (!modalOn) {
@@ -192,12 +242,12 @@ const IndexPage = () => {
       </Helmet>
       {/* <SEO title="Home" /> */}
       <BackgroundImage className="home-header-banner responsive text-center padding" tag="main" fluid={data.headerImage.childImageSharp.fluid}>
-        <div className="flex column h-80 w-2 margin-top margin-left">
+        <div className="flex column h-80 w-2 margin-top">
           <h1>We say: <span className="block">Every business has a code...</span></h1>
-          <p className="padding"> because we believe that behind a good project there needs to be a solid, professional and committed team.</p>
+          <h4 className="padding"> because we believe that behind a good project there needs to be a solid, professional and committed team.</h4>
           <div className="m-auto">
             <div className="margin-bottom">
-              <p>You give the idea...</p>
+              <h4>You give the idea...</h4>
               <h4>We show the results</h4>
             </div>
             <ButtonLink url="#" style="button cta margin-top" name="GET STARTED" />
@@ -262,6 +312,32 @@ const IndexPage = () => {
           {/* <div className="text-center margin-bottom">
             <button className="button cta-reversed color-cta">PREVIOUS PAGE</button>
           </div> */}
+        </div>
+      </section>
+      <section className="padding-top padding-bottom bg-white">
+        <h2 className="text-center margin-bottom-small color-primary">TEAM MANAGER</h2>
+        <div className="responsive padding">
+          <p className="w-2 m-h-auto text-responsive-align">Our experience will add value and quality to your site and any project you have in store for us. </p>
+        </div>
+        <div className="margin-top margin-bottom padding-top padding-bottom responsive">
+          <BackgroundImage fluid={sources} tag="div" className="m-h-auto flex column contact-background">
+            <div className="w-1 relative">
+              <div className="contact-image contact-image-1" id="enrique-contact" onClick={openContactModal}>
+                <Img fixed={data.enriqueContactImage.childImageSharp.fixed} />
+              </div>
+              <div className="contact-image contact-image-2" id="alejandro-contact" onClick={openContactModal}>
+                <Img fixed={data.alejandroContactImage.childImageSharp.fixed} />
+              </div>
+            </div>
+            <div className="w-1 relative">
+              <div className="contact-image contact-image-3" id="ricardo-contact" onClick={openContactModal}>
+                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+              </div>
+              <div className="contact-image contact-image-4" id="placeholder" onClick={openContactModal}>
+                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+              </div>
+            </div>
+          </BackgroundImage>
         </div>
       </section>
     </Layout>

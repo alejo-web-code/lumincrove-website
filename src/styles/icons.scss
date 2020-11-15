@@ -19,6 +19,12 @@
 	@include icons-size(25px, 15px);
 }
 
+.back-arrow {
+    @extend .icons-settings;
+	background: url(../../static/assets/back-arrow.svg);
+	@include icons-size(25px, 15px);
+}
+
 .social-icon {
 	@extend .icons-settings;
 	@include icons-size(30px, 30px);

@@ -9,6 +9,16 @@ function Menu(props) {
     let menuClass;
     let submenuClass;
 
+    if (openMenu) {
+        listClass = "nav-menu text-center"
+    }
+    else {
+        listClass = "nav-menu text-center close"
+        if (serviceMenu === 'show') {
+            setServiceMenu('hiden')
+        }
+    }
+
     const openServices = () => {
         setServiceMenu('show')
     }
@@ -26,13 +36,6 @@ function Menu(props) {
         submenuClass = " text-center menu"
     }
 
-    if (openMenu) {
-        listClass = "nav-menu text-center"
-    }
-    else {
-        listClass = "nav-menu text-center close"
-    }
-
     return (
         <div className={listClass}>
             <div className={menuClass}>
@@ -41,10 +44,10 @@ function Menu(props) {
                         <span onClick={openServices} onKeyDown={openServices} role="presentation">Our Services</span>
                     </li>
                     <li className="menu-item padding-small">
-                        <Link to="#">Terms Of Use</Link>
+                        <Link to="/terms-of-use">Terms Of Use</Link>
                     </li>
                     <li className="menu-item padding-small">
-                        <Link to="#">Privaci Policy</Link>
+                        <Link to="/privacy-policy">Privacy Policy</Link>
                     </li>
                     <li className="menu-item padding-small">
                         <Link to="#">Blog</Link>
@@ -53,8 +56,10 @@ function Menu(props) {
             </div>
             <div className={submenuClass}>
                 <ul>
-                    <li className="menu-item padding-small">
-                        <span onClick={closeServices} onKeyDown={closeServices} role="presentation">Our Services</span>
+                    <li className="menu-item padding-small flex">
+                        <span onClick={closeServices} onKeyDown={closeServices} role="presentation">
+                            <i className="back-arrow"></i>
+                        </span>
                     </li>
                     <li className="menu-item padding-small">
                         <Link to="#">Service 1</Link>

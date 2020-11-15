@@ -60,6 +60,41 @@
     height: 200px;
 }
 
+/*Team manager*/
+.contact-background {
+    height: 370px;
+    width: 375px;
+}
+
+.contact-image {
+    position: absolute;
+
+    .gatsby-image-wrapper {
+        height: 100px !important;
+        width: 100px !important;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &-1 {
+        top:-15%;
+        right: 15%;
+    }
+    &-2 {
+        top:25%;
+        left: 15%;
+    }
+    &-3 {
+        bottom:-15%;
+        left: 10%;
+    }
+    &-4 {
+        bottom:25%;
+        right: 15%;
+    }
+}
+
+
 @media screen and (min-width: $grid-small-breakpoint) {
     .expertise-section {
         height: 30vh;
@@ -81,6 +116,39 @@
 
     .underline {
         border-bottom: 1px $cta solid;
+    }
+
+    .contact-background {
+        height: 410px;
+        width: 570px;
+    }
+
+    .contact-image {
+        position: absolute;
+
+        .gatsby-image-wrapper {
+            height: 100px !important;
+            width: 100px !important;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        &-1 {
+            top:-15%;
+            right: 15%;
+        }
+        &-2 {
+            top:25%;
+            left: 25%;
+        }
+        &-3 {
+            bottom:-15%;
+            left: 25%;
+        }
+        &-4 {
+            bottom:25%;
+            right: 20%;
+        }
     }
 }
 
