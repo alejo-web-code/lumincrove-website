@@ -288,9 +288,8 @@ const IndexPage = () => {
                 <div className="w-30 text-center">
                   <Img fixed={cardImages[index]} />
                 </div>
-                <div>
-                  <h3>{contact.name}</h3>
-                  <h4>{contact.charge}</h4>
+                <div className="w-60">
+                  <h3 className="margin-bottom-tiny">{contact.name}, <span>{contact.charge} and Founder</span></h3>
                   <p>{contact.description}</p>
                 </div>
                 <div>

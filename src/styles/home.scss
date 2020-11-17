@@ -163,7 +163,11 @@
 
         .gatsby-image-wrapper {
             border-radius: 50%;
-            height: 200px;
+            height: 200px !important;
+        }
+
+        .subheading-text {
+            font-style: italic;
         }
     }
 }
