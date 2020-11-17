@@ -66,7 +66,7 @@ function WhyUs(props) {
                     }
 
                     return (
-                        <div className="w-4 inline-block margin-bottom-small card" key={index} onClick={() => dropdown(index)}>
+                        <div className="w-25 inline-block margin-bottom-small card" key={index} onClick={() => dropdown(index)}>
                             <h4 className={subtitleClass}>{element.title}</h4>
                             <div className={contentClass}>
                                 <p>{element.content}</p>
