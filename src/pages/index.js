@@ -6,7 +6,9 @@ import WhyUs from "../components/whyus"
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import ButtonLink from '../components/buttonLink';
-import CarouselInfinite from '../components/carousel/infinite'
+import CarouselInfinite from '../components/carousel/infinite';
+import * as CONSTANS from '../constants/global'
+import favicon from '../../static/assets/logo-mobile.png';
 import '../styles/home.scss'
 import '../styles/modals.scss'
 // import Image from "../components/image"
@@ -100,23 +102,44 @@ const IndexPage = () => {
           }
         }
       }
-      enriqueContactImage: file(relativePath: { eq: "enrique-profile.png" }) {
+      enriqueContactImageMobile: file(relativePath: { eq: "enrique-profile.png" }) {
           childImageSharp {
             fixed(width: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      alejandroContactImage: file(relativePath: { eq: "alejandro-profile.png" }) {
+      alejandroContactImageMobile: file(relativePath: { eq: "alejandro-profile.png" }) {
           childImageSharp {
             fixed(width: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      placeholderImage: file(relativePath: { eq: "placeholder.png" }) {
+      placeholderImageMobile: file(relativePath: { eq: "placeholder.png" }) {
           childImageSharp {
             fixed(width: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      enriqueContactImageDesktop: file(relativePath: { eq: "enrique-profile.png" }) {
+          childImageSharp {
+            fixed(width: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      alejandroContactImageDesktop: file(relativePath: { eq: "alejandro-profile.png" }) {
+          childImageSharp {
+            fixed(width: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      placeholderImageDesktop: file(relativePath: { eq: "placeholder.png" }) {
+          childImageSharp {
+            fixed(width: 200) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -130,6 +153,12 @@ const IndexPage = () => {
       ...data.teamManagerDesktopImage.childImageSharp.fluid,
       media: `(min-width: 768px)`
     }
+  ]
+
+  const cardImages = [
+    data.enriqueContactImageDesktop.childImageSharp.fixed,
+    data.alejandroContactImageDesktop.childImageSharp.fixed,
+    data.enriqueContactImageDesktop.childImageSharp.fixed
   ]
 
   const items = [
@@ -163,6 +192,7 @@ const IndexPage = () => {
   let modalClass;
   let modalContentClass;
   let whatWeDo;
+  let teamManagerChild;
 
   useEffect(() => {
     const handleWindowSizeChange = () => {
@@ -198,6 +228,27 @@ const IndexPage = () => {
     whatWeDo = (
       <CarouselInfinite items={items} width={viewportWidth} />
     )
+
+    teamManagerChild = (
+      <BackgroundImage fluid={sources} tag="div" className="m-h-auto flex column contact-background">
+        <div className="w-100 relative">
+          <div className="contact-image contact-image-1" id="enrique-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
+            <Img fixed={data.enriqueContactImageMobile.childImageSharp.fixed} />
+          </div>
+          <div className="contact-image contact-image-2" id="alejandro-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
+            <Img fixed={data.alejandroContactImageMobile.childImageSharp.fixed} />
+          </div>
+        </div>
+        <div className="w-100 relative">
+          <div className="contact-image contact-image-3" id="ricardo-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
+            <Img fixed={data.placeholderImageMobile.childImageSharp.fixed} />
+          </div>
+          <div className="contact-image contact-image-4" id="placeholder">
+            <Img fixed={data.placeholderImageMobile.childImageSharp.fixed} />
+          </div>
+        </div>
+      </BackgroundImage>
+    )
   }
   else {
     whatWeDo = (
@@ -206,7 +257,7 @@ const IndexPage = () => {
           let titleClass = element.style ? "color-secondary inline-block" : "color-primary inline-block";
 
           return (
-            <div className="w-3 flex column padding" key={index}>
+            <div className="w-33 flex column padding" key={index}>
               <BackgroundImage className="banner-imagen flex column end" tag="div" fluid={element.image}>
                 <h2 className="text-reversed padding">WHAT WE DO</h2>
               </BackgroundImage>
@@ -220,11 +271,37 @@ const IndexPage = () => {
                 </div>
               </div>
               <div className="text-center">
-                <ButtonLink url="#" style="button cta margin-top" name="SEE OFFERS" />
+                <ButtonLink url="#" customStyle="button cta margin-top" name="SEE OFFERS" />
               </div>
             </div>
           )
         })}
+      </div>
+    )
+
+    teamManagerChild = (
+      <div>
+        {
+          CONSTANS.CONTACT_DATA.map((contact, index) => {
+            return (
+              <div className="contact-card-desktop flex start" key={index}>
+                <div className="w-30 text-center">
+                  <Img fixed={cardImages[index]} />
+                </div>
+                <div className="w-60">
+                  <h3 className="margin-bottom-tiny">{contact.name}, <span>{contact.charge} and Founder</span></h3>
+                  <p>{contact.description}</p>
+                </div>
+                <div>
+                  <div>
+                    <Link to={contact.contactInfo.facebook}><i></i></Link>
+                    <Link to={contact.contactInfo.twitter}><i></i></Link>
+                    <Link to={contact.contactInfo.linkedin}><i></i></Link>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
       </div>
     )
   }
@@ -239,10 +316,11 @@ const IndexPage = () => {
           name="description"
           content={data.site.siteMetadata.description}
         />
+        <link rel="icon" type="imge/x-icon" href={favicon} />
       </Helmet>
       {/* <SEO title="Home" /> */}
       <BackgroundImage className="home-header-banner responsive text-center padding" tag="main" fluid={data.headerImage.childImageSharp.fluid}>
-        <div className="flex column h-80 w-2 margin-top">
+        <div className="flex column h-80 w-50 margin-top">
           <h1>We say: <span className="block">Every business has a code...</span></h1>
           <h4 className="padding"> because we believe that behind a good project there needs to be a solid, professional and committed team.</h4>
           <div className="m-auto">
@@ -250,7 +328,7 @@ const IndexPage = () => {
               <h4>You give the idea...</h4>
               <h4>We show the results</h4>
             </div>
-            <ButtonLink url="#" style="button cta margin-top" name="GET STARTED" />
+            <ButtonLink url="#" customStyle="button cta margin-top" name="GET STARTED" />
           </div>
         </div>
       </BackgroundImage>
@@ -260,7 +338,7 @@ const IndexPage = () => {
       <BackgroundImage tag="section" className="expertise-section padding padding-top padding-bottom" fluid={data.expertiseImage.childImageSharp.fluid}>
         <div className="h-70 responsive padding-top">
           <h2 className="color-cta text-center margin-bottom-small">OUR EXPERTISE</h2>
-          <div className="w-2 m-h-auto">
+          <div className="w-50 m-h-auto">
             <p className="text-reversed padding-right padding-left">We work with technologies that achieve high performance and quality values that are highly in demand by current web deelopment standards</p>
           </div>
         </div>
@@ -272,8 +350,8 @@ const IndexPage = () => {
       <section className={modalClass} aria-hidden="true">
         <div className={modalContentClass}>
           <div className="flex wrap margin-bottom responsive">
-            <div className="w-2 margin-bottom">
-              <div className="m-h-auto text-center w-4 border-botton-primary">
+            <div className="w-50 margin-bottom">
+              <div className="m-h-auto text-center w-25 border-botton-primary">
                 <Img className="margin-bottom-small" fixed={data.managmentImage.childImageSharp.fixed} />
               </div>
               <div className="padding-small">
@@ -283,8 +361,8 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-2 margin-bottom">
-              <div className="m-h-auto text-center w-4 border-botton-soft-blue">
+            <div className="w-50 margin-bottom">
+              <div className="m-h-auto text-center w-25 border-botton-soft-blue">
                 <Img className="margin-bottom-small" fixed={data.websiteImage.childImageSharp.fixed} />
               </div>
               <div className="padding-small">
@@ -294,8 +372,8 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-2 margin-bottom m-h-auto">
-              <div className="m-h-auto text-center w-4 border-botton-cta">
+            <div className="w-50 margin-bottom m-h-auto">
+              <div className="m-h-auto text-center w-25 border-botton-cta">
                 <Img className="margin-bottom-small" fixed={data.toolsImage.childImageSharp.fixed} />
               </div>
               <div className="padding-small">
@@ -305,8 +383,8 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="button-close" onClick={toggleModal}>
-              <button className="button">&times;</button>
+            <div className="button-close">
+              <button className="button" onClick={toggleModal}>&times;</button>
             </div>
           </div>
           {/* <div className="text-center margin-bottom">
@@ -317,27 +395,10 @@ const IndexPage = () => {
       <section className="padding-top padding-bottom bg-white">
         <h2 className="text-center margin-bottom-small color-primary">TEAM MANAGER</h2>
         <div className="responsive padding">
-          <p className="w-2 m-h-auto text-responsive-align">Our experience will add value and quality to your site and any project you have in store for us. </p>
+          <p className="w-50 m-h-auto text-responsive-align">Our experience will add value and quality to your site and any project you have in store for us. </p>
         </div>
         <div className="margin-top margin-bottom padding-top padding-bottom responsive">
-          <BackgroundImage fluid={sources} tag="div" className="m-h-auto flex column contact-background">
-            <div className="w-1 relative">
-              <div className="contact-image contact-image-1" id="enrique-contact" onClick={openContactModal}>
-                <Img fixed={data.enriqueContactImage.childImageSharp.fixed} />
-              </div>
-              <div className="contact-image contact-image-2" id="alejandro-contact" onClick={openContactModal}>
-                <Img fixed={data.alejandroContactImage.childImageSharp.fixed} />
-              </div>
-            </div>
-            <div className="w-1 relative">
-              <div className="contact-image contact-image-3" id="ricardo-contact" onClick={openContactModal}>
-                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-              </div>
-              <div className="contact-image contact-image-4" id="placeholder" onClick={openContactModal}>
-                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-              </div>
-            </div>
-          </BackgroundImage>
+          {teamManagerChild}
         </div>
       </section>
       <section className="padding-bottom">

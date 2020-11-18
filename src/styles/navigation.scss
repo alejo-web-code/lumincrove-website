@@ -13,12 +13,19 @@
 
 .navbar-section {
     top: 0;
-    padding: 1em 1em 0 1em;
+    padding: 0.75em;
     background-color: $primary;
+
+    .hide-mobile {
+        .menu-item {
+            padding: 0.5em 1em;
+        }
+    }
 }
 
 .nav-menu {
     position: absolute;
+    top:60px;
 	left: 0;
     width: 100vw;
     padding: 2em 0;
@@ -47,7 +54,7 @@
         font-weight: 600;
         padding: 1em;
         margin: 0 2em;
-        border-bottom: 1px #F26D6D solid;
+        border-bottom: 1px $cta solid;
 
         a {
             color: $white;
@@ -60,5 +67,25 @@
 @media screen and (min-width: $grid-medium-breakpoint) {
     .logo {
         margin: 0 !important;
+    }
+
+    .submenu {
+        position: absolute;
+        left: 0;
+        background-color: $primary;
+        width: 140%;
+        height: 155px;
+        overflow: hidden;
+        transition: 0.2s ease all;
+
+        &.close {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 0;
+        }
+
+        .submenu-item {
+            border-bottom: 1px $cta solid;
+        }
     }
 }

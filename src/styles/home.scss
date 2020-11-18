@@ -156,4 +156,18 @@
     .expertise-section {
         height: 40vh;
     }
+
+    .contact-card-desktop {
+        padding: $padding 0;
+        margin: $margin-extra;
+
+        .gatsby-image-wrapper {
+            border-radius: 50%;
+            height: 200px !important;
+        }
+
+        .subheading-text {
+            font-style: italic;
+        }
+    }
 }

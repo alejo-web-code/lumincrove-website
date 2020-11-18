@@ -26,9 +26,20 @@ function Navigation() {
     `)
 
     let [openMenu, setOpenMenu] = useState(false);
+    let [openSubMenu, setOpenSubMenu] = useState(false);
+
+    let subMenuClass = openSubMenu ? 'submenu padding' : 'submenu close padding';
 
     const toggleMenu = () => {
         openMenu ? setOpenMenu(false) : setOpenMenu(true)
+    }
+
+    const openServices = () => {
+        setOpenSubMenu(true);
+    }
+
+    const closeServices = () => {
+        setOpenSubMenu(false);
     }
 
     useEffect(() => {
@@ -36,16 +47,45 @@ function Navigation() {
     }, [openMenu])
 
     return (
-        <section className="navbar-section">
+        <section className="navbar-section reponsive flex">
             <div className="hide-desktop toggle-menu">
                 <button className="button button-menu" onClick={toggleMenu}>
                     <i className="menu-icon"></i>
                 </button>
             </div>
-            <div className="flex between align-center w-1">
+            <div className="flex between align-center w-100">
                 <Link to="/" className="logo">
                     <Img fixed={data.logoMobile.childImageSharp.fixed} />
                 </Link>
+                <nav className="hide-mobile padding-right">
+                    <ul className="flex center margin-right">
+                        <li className="menu-item relative">
+                            <Link to="#" onMouseOver={openServices} onMouseLeave={closeServices} role="menuitem">Our Services</Link>
+                            <div className={subMenuClass} role="presentation" onMouseOver={openServices} onFocus={openServices} onMouseLeave={closeServices} >
+                                <ul className="text-left h-100">
+                                    <li className="submenu-item padding-small">
+                                        <Link to="#">Web Migration</Link>
+                                    </li>
+                                    <li className="submenu-item padding-small">
+                                        <Link to="#">Web Design</Link>
+                                    </li>
+                                    <li className="submenu-item padding-small">
+                                        <Link to="#">System Operation</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li className="menu-item">
+                            <Link to="/terms-of-use">Terms Of Use</Link>
+                        </li>
+                        <li className="menu-item">
+                            <Link to="/privacy-policy">Privacy Policy</Link>
+                        </li>
+                        <li className="menu-item">
+                            <Link to="#">Blog</Link>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <Menu openMenu={openMenu} />
         </section>

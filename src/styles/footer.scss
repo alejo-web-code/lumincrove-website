@@ -7,3 +7,21 @@
 .footer-link {
     margin: $margin-small 0;
 }
+
+@media screen and (min-width: $grid-small-breakpoint) {
+    .footer-container {
+        flex-direction: row-reverse !important;
+
+        .contact-form {
+            flex-wrap: wrap;
+            
+            .input-container {
+                padding: 0 $padding-small;
+            }
+
+            .textarea {
+                height: 40px;
+            }
+        }
+    }
+}
