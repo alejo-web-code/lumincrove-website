@@ -401,6 +401,40 @@ const IndexPage = () => {
           {teamManagerChild}
         </div>
       </section>
+      <section className="padding-bottom">
+        <div className="flex bg-soft h-px-100">
+          <div className="flex margin-bottom-negative align-center margin-left">
+            <Img fixed={data.enriqueContactImage.childImageSharp.fixed} />
+          </div>
+            <h3 className="flex align-items margin-left text-reversed">Enrique Padron</h3>
+          <div className="w-5 h-20 margin-left-extra padding-top-small"> 
+              <i className="forward-arrow m-right-none"></i>
+          </div>
+        </div>
+        <div className="padding">
+            <h4 className="text-center color-primary">CEO and Founder</h4>
+          <div className="margin-top margin-bottom ">
+            <p className="">Enrique is a visionary of the business world and his strategic capacity allows our company to determine the course to follow in the changing web development market. He is a professional with a high knowledge of business, with skills for decision-making and alignment of all department, guaranteeing the correct functionality of the organization.</p>
+          </div>
+        </div>
+        <div className="padding-bottom">
+            <p className="padding text-center color-primary">Contact Info</p>
+          <div className="padding flex evenly">
+            <Link to="facebook.com">
+              <i className="social-icon facebook-icon"></i>
+            </Link>
+            <Link to="instagram.com">
+              <i className="social-icon instagram-icon"></i>
+            </Link>
+            <Link to="gmail.com">
+              <i className="social-icon email-icon"></i>
+            </Link>
+            <Link to="linkedin.com">
+              <i className="social-icon linkedin-icon"></i>
+            </Link>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
