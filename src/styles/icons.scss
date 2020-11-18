@@ -25,6 +25,12 @@
 	@include icons-size(25px, 15px);
 }
 
+.forward-arrow {
+    @extend .icons-settings;
+	background: url(../../static/assets/forward-arrow.svg);
+	@include icons-size(25px, 15px);
+}
+
 .social-icon {
 	@extend .icons-settings;
 	@include icons-size(30px, 30px);
@@ -41,16 +47,16 @@
 	&.linkedin-icon-reversed {
 		background: url(../../static/assets/likedin-icon-reversed.svg);
 	}
-	// &.facebook-icon {
-	// 	background: url(../../static/assets/facebook-icon.svg);
-	// }
-	// &.instagram-icon {
-	// 	background: url(../../static/assets/instagram-icon.svg);
-	// }
-	// &.email-icon {
-	// 	background: url(../../static/assets/email-icon.svg);
-	// }
-	// &.linkedin-icon {
-	// 	background: url(../../static/assets/likedin-icon.svg);
-	// }
+	&.facebook-icon {
+		background: url(../../static/assets/facebook-icon.svg);
+	}
+	&.instagram-icon {
+		background: url(../../static/assets/instagram-icon.svg);
+	}
+	&.email-icon {
+		background: url(../../static/assets/email-icon.svg);
+	}
+	&.linkedin-icon {
+		background: url(../../static/assets/likedin-icon.svg);
+	}
 }
