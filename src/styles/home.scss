@@ -94,6 +94,32 @@
     }
 }
 
+.contact-modal {
+    height: 100vh;
+    padding: 0 !important;
+
+    .contact-image {
+        bottom: -35%;
+        left: 5%;
+    }
+
+    .bg-soft,
+    .bg-cta,
+    .bg-primary {
+        height: 15%;
+
+        .button {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+    }
+
+    .contact-info {
+        padding: $padding-small $padding;
+    }
+}
+
 
 @media screen and (min-width: $grid-small-breakpoint) {
     .expertise-section {

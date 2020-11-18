@@ -115,9 +115,17 @@
   height: 20%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /*backgrounds*/
 .bg-soft {
   background-color: $soft-blue;
+}
+
+.bg-cta {
+  background-color: $cta;
 }
 
 .bg-primary {

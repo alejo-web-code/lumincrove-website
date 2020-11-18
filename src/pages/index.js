@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useReducer } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 import Layout from "../components/layout";
@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 import ButtonLink from '../components/buttonLink';
 import CarouselInfinite from '../components/carousel/infinite';
+import ContactModal from '../components/modals/contactModal';
 import * as CONSTANS from '../constants/global'
 import favicon from '../../static/assets/logo-mobile.png';
 import '../styles/home.scss'
@@ -161,6 +162,12 @@ const IndexPage = () => {
     data.enriqueContactImageDesktop.childImageSharp.fixed
   ]
 
+  const cardImagesMobile = [
+    data.enriqueContactImageMobile.childImageSharp.fixed,
+    data.alejandroContactImageMobile.childImageSharp.fixed,
+    data.enriqueContactImageMobile.childImageSharp.fixed
+  ]
+
   const items = [
     {
       image: data.carouselImage.childImageSharp.fluid,
@@ -188,7 +195,11 @@ const IndexPage = () => {
 
   const [viewportWidth, setViewportWidth] = useState('');
   const [modalOn, setModalOn] = useState(false);
-  const [contactModal, setContactModal] = useState('');
+  const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {
+    indexContactModal: 0,
+    contactModalOpen: false
+  });
+
   let modalClass;
   let modalContentClass;
   let whatWeDo;
@@ -203,15 +214,29 @@ const IndexPage = () => {
     window.addEventListener('resize', handleWindowSizeChange);
 
     modalOn ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
+    state.contactModalOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
   })
 
   const toggleModal = () => {
     modalOn ? setModalOn(false) : setModalOn(true)
   }
 
-  const openContactModal = (e) => {
-    if (e.target.id !== 'placeholder') {
-      setContactModal(e.target.id)
+  const toggleContactModal = (e) => {
+    if (e.currentTarget.id !== 'go-back') {
+      for (let i = 0; i < CONSTANS.CONTACT_DATA.length; i++) {
+        if (e.currentTarget.id === CONSTANS.CONTACT_DATA[i].charge) {
+          setState({
+            indexContactModal: i,
+            contactModalOpen: true
+          })
+        }
+      }
+    }
+    else {
+      setState({
+        indexContactModal: 0,
+        contactModalOpen: false
+      })
     }
   }
 
@@ -232,15 +257,15 @@ const IndexPage = () => {
     teamManagerChild = (
       <BackgroundImage fluid={sources} tag="div" className="m-h-auto flex column contact-background">
         <div className="w-100 relative">
-          <div className="contact-image contact-image-1" id="enrique-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
+          <div className="contact-image contact-image-1 pointer" id="CEO" role="presentation" onClick={toggleContactModal} onKeyPress={toggleContactModal}>
             <Img fixed={data.enriqueContactImageMobile.childImageSharp.fixed} />
           </div>
-          <div className="contact-image contact-image-2" id="alejandro-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
+          <div className="contact-image contact-image-2 pointer" id="CTO" role="presentation" onClick={toggleContactModal} onKeyPress={toggleContactModal}>
             <Img fixed={data.alejandroContactImageMobile.childImageSharp.fixed} />
           </div>
         </div>
         <div className="w-100 relative">
-          <div className="contact-image contact-image-3" id="ricardo-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
+          <div className="contact-image contact-image-3 pointer" id="CMO" role="presentation" onClick={toggleContactModal} onKeyPress={toggleContactModal}>
             <Img fixed={data.placeholderImageMobile.childImageSharp.fixed} />
           </div>
           <div className="contact-image contact-image-4" id="placeholder">
@@ -401,40 +426,14 @@ const IndexPage = () => {
           {teamManagerChild}
         </div>
       </section>
-      <section className="padding-bottom">
-        <div className="flex bg-soft h-px-100">
-          <div className="flex margin-bottom-negative align-center margin-left">
-            <Img fixed={data.enriqueContactImage.childImageSharp.fixed} />
-          </div>
-            <h3 className="flex align-items margin-left text-reversed">Enrique Padron</h3>
-          <div className="w-5 h-20 margin-left-extra padding-top-small"> 
-              <i className="forward-arrow m-right-none"></i>
-          </div>
-        </div>
-        <div className="padding">
-            <h4 className="text-center color-primary">CEO and Founder</h4>
-          <div className="margin-top margin-bottom ">
-            <p className="">Enrique is a visionary of the business world and his strategic capacity allows our company to determine the course to follow in the changing web development market. He is a professional with a high knowledge of business, with skills for decision-making and alignment of all department, guaranteeing the correct functionality of the organization.</p>
-          </div>
-        </div>
-        <div className="padding-bottom">
-            <p className="padding text-center color-primary">Contact Info</p>
-          <div className="padding flex evenly">
-            <Link to="facebook.com">
-              <i className="social-icon facebook-icon"></i>
-            </Link>
-            <Link to="instagram.com">
-              <i className="social-icon instagram-icon"></i>
-            </Link>
-            <Link to="gmail.com">
-              <i className="social-icon email-icon"></i>
-            </Link>
-            <Link to="linkedin.com">
-              <i className="social-icon linkedin-icon"></i>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ContactModal
+        image={cardImagesMobile[state.indexContactModal]}
+        name={CONSTANS.CONTACT_DATA[state.indexContactModal].name}
+        charge={CONSTANS.CONTACT_DATA[state.indexContactModal].charge}
+        description={CONSTANS.CONTACT_DATA[state.indexContactModal].description}
+        openModal={state.contactModalOpen}
+        toggleModal={toggleContactModal}
+      />
     </Layout>
   )
 }
