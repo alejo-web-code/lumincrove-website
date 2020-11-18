@@ -60,8 +60,8 @@ function Navigation() {
                 <nav className="hide-mobile padding-right">
                     <ul className="flex center margin-right">
                         <li className="menu-item relative">
-                            <Link to="#" onMouseOver={openServices} onMouseLeave={closeServices} role="presentation">Our Services</Link>
-                            <div className={subMenuClass} onMouseOver={openServices} onMouseLeave={closeServices} >
+                            <Link to="#" onMouseOver={openServices} onMouseLeave={closeServices} role="menuitem">Our Services</Link>
+                            <div className={subMenuClass} role="presentation" onMouseOver={openServices} onFocus={openServices} onMouseLeave={closeServices} >
                                 <ul className="text-left h-100">
                                     <li className="submenu-item padding-small">
                                         <Link to="#">Web Migration</Link>

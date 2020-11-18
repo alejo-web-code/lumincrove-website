@@ -12,22 +12,22 @@ const Footer = () => {
                 <div className="flex responsive footer-container around">
                     <div className="w-50 padding">
                         <form className="w-100 flex responsive contact-form">
-                            <div className="input-container w-50 margin-bottom-small">
-                                <label for="name" className="block text-reversed label">Full Name *</label>
+                            <label className="input-container w-50 margin-bottom-small">
+                                <span className="block text-reversed label">Full Name *</span>
                                 <input className="input" type="text" name="userName" value="" placeholder="Enter your name" />
-                            </div>
-                            <div className="input-container w-50 margin-bottom-small">
-                                <label for="name" className="block text-reversed label">Email *</label>
+                            </label>
+                            <label className="input-container w-50 margin-bottom-small">
+                                <span for="name" className="block text-reversed label">Email *</span>
                                 <input className="input" type="email" value="" placeholder="Enter your email" name="email" />
-                            </div>
-                            <div className="input-container w-50 margin-bottom-small">
-                                <label for="name" className="block text-reversed label">Company</label>
+                            </label>
+                            <label className="input-container w-50 margin-bottom-small">
+                                <span for="name" className="block text-reversed label">Company</span>
                                 <input className="input" type="text" value="" placeholder="Your company" name="company" />
-                            </div>
-                            <div className="input-container w-50 margin-bottom">
-                                <label for="name" className="block text-reversed label">Comments/ Questions *</label>
+                            </label>
+                            <label className="input-container w-50 margin-bottom">
+                                <span for="name" className="block text-reversed label">Comments/ Questions *</span>
                                 <textarea className="textarea" value="" placeholder="Let your comment" name="comments" />
-                            </div>
+                            </label>
                             <div className="text-center margin-bottom w-100">
                                 <button className="button cta">GET STARTED</button>
                             </div>

@@ -232,18 +232,18 @@ const IndexPage = () => {
     teamManagerChild = (
       <BackgroundImage fluid={sources} tag="div" className="m-h-auto flex column contact-background">
         <div className="w-100 relative">
-          <div className="contact-image contact-image-1" id="enrique-contact" onClick={openContactModal}>
+          <div className="contact-image contact-image-1" id="enrique-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
             <Img fixed={data.enriqueContactImageMobile.childImageSharp.fixed} />
           </div>
-          <div className="contact-image contact-image-2" id="alejandro-contact" onClick={openContactModal}>
+          <div className="contact-image contact-image-2" id="alejandro-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
             <Img fixed={data.alejandroContactImageMobile.childImageSharp.fixed} />
           </div>
         </div>
         <div className="w-100 relative">
-          <div className="contact-image contact-image-3" id="ricardo-contact" onClick={openContactModal}>
+          <div className="contact-image contact-image-3" id="ricardo-contact" role="presentation" onClick={openContactModal} onKeyPress={openContactModal}>
             <Img fixed={data.placeholderImageMobile.childImageSharp.fixed} />
           </div>
-          <div className="contact-image contact-image-4" id="placeholder" onClick={openContactModal}>
+          <div className="contact-image contact-image-4" id="placeholder">
             <Img fixed={data.placeholderImageMobile.childImageSharp.fixed} />
           </div>
         </div>
@@ -271,7 +271,7 @@ const IndexPage = () => {
                 </div>
               </div>
               <div className="text-center">
-                <ButtonLink url="#" style="button cta margin-top" name="SEE OFFERS" />
+                <ButtonLink url="#" customStyle="button cta margin-top" name="SEE OFFERS" />
               </div>
             </div>
           )
@@ -328,7 +328,7 @@ const IndexPage = () => {
               <h4>You give the idea...</h4>
               <h4>We show the results</h4>
             </div>
-            <ButtonLink url="#" style="button cta margin-top" name="GET STARTED" />
+            <ButtonLink url="#" customStyle="button cta margin-top" name="GET STARTED" />
           </div>
         </div>
       </BackgroundImage>
@@ -383,8 +383,8 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="button-close" onClick={toggleModal}>
-              <button className="button">&times;</button>
+            <div className="button-close">
+              <button className="button" onClick={toggleModal}>&times;</button>
             </div>
           </div>
           {/* <div className="text-center margin-bottom">

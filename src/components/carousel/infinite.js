@@ -118,7 +118,7 @@ function CarouselInfinite(props) {
                 })}
             </div>
             <div className="item-cta text-center margin-bottom">
-                <ButtonLink url="#" style="button cta" name="SEE OFFERS" />
+                <ButtonLink url="#" customStyle="button cta" name="SEE OFFERS" />
             </div>
             <div className="indicators text-center">
                 {items.map((item, index) => {

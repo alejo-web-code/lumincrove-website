@@ -1,12 +1,16 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: require('./site-meta-data.json'),
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static/assets`,
-      },
+        name: `markdown-pages`,
+        path: `${__dirname}/_data`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -15,8 +19,32 @@ module.exports = {
           heading: null,
           maxDepth: 6
         },
-        plugins: []
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false
+            }
+          },
+          {
+            resolve: 'gatsby-remark-emojis'
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers'
+          }
+        ]
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/assets`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
