@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
                         <div className="w-100 flex evenly padding">
                             <div className="text-left">
-                                <Link to="#" className="text-reversed block footer-link">Terms of Use</Link>
+                                <Link to="/terms-of-use" className="text-reversed block footer-link">Terms of Use</Link>
                                 <Link to="/privacy-policy" className="text-reversed block footer-link">Privacy Polcy</Link>
                                 <Link to="#" className="text-reversed block footer-link">Blog</Link>
                                 <Link to="#" className="text-reversed block footer-link">Contact Us</Link>

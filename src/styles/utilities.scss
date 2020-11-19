@@ -65,6 +65,16 @@
   max-width: 100%;
 }
 
+.w-90 {
+  flex-basis: 90%;
+  max-width: 90%;
+}
+
+.w-70 {
+  flex-basis: 70%;
+  max-width: 70%;
+}
+
 .w-60 {
   flex-basis: 60%;
   max-width: 60%;
@@ -233,6 +243,11 @@
     color: $white;
     background-color: $cta;
     border: $cta 2px solid;
+    
+    &:hover {
+      background-color: $cta-dark;
+      border: $cta-dark 2px solid;
+    }
   }
   &.cta-reversed {
     color: $white;
@@ -240,6 +255,10 @@
     border: $cta 2px solid;
     border-radius: 3px;
     cursor: pointer;
+
+    &:hover {
+      background: $cta;
+    }
   }
 
   &.button-get {
@@ -283,6 +302,10 @@
 
 .text-bold {
   font-weight: $font-weight-bold;
+}
+
+.text-semibold {
+  font-weight: $font-weight-semibold;
 }
 
 /*color*/
