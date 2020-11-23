@@ -64,10 +64,10 @@ function Navigation() {
                             <div className={subMenuClass} role="presentation" onMouseOver={openServices} onFocus={openServices} onMouseLeave={closeServices} >
                                 <ul className="text-left h-100">
                                     <li className="submenu-item padding-small">
-                                        <Link to="#">Web Migration</Link>
+                                        <Link to="/services/web-migration">Web Migration</Link>
                                     </li>
                                     <li className="submenu-item padding-small">
-                                        <Link to="#">Web Design</Link>
+                                        <Link to="/services/web-design">Web Design</Link>
                                     </li>
                                     <li className="submenu-item padding-small">
                                         <Link to="#">System Operation</Link>

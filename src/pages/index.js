@@ -376,7 +376,7 @@ const IndexPage = () => {
         <div className={modalContentClass}>
           <div className="flex wrap margin-bottom responsive">
             <div className="w-50 margin-bottom">
-              <div className="m-h-auto text-center w-25 border-botton-primary">
+              <div className="m-h-auto text-center w-25 border-bottom-primary">
                 <Img className="margin-bottom-small" fixed={data.managmentImage.childImageSharp.fixed} />
               </div>
               <div className="padding-small">
@@ -387,7 +387,7 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="w-50 margin-bottom">
-              <div className="m-h-auto text-center w-25 border-botton-soft-blue">
+              <div className="m-h-auto text-center w-25 border-bottom-soft-blue">
                 <Img className="margin-bottom-small" fixed={data.websiteImage.childImageSharp.fixed} />
               </div>
               <div className="padding-small">
@@ -398,7 +398,7 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="w-50 margin-bottom m-h-auto">
-              <div className="m-h-auto text-center w-25 border-botton-cta">
+              <div className="m-h-auto text-center w-25 border-bottom-cta">
                 <Img className="margin-bottom-small" fixed={data.toolsImage.childImageSharp.fixed} />
               </div>
               <div className="padding-small">

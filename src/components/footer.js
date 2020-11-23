@@ -56,8 +56,8 @@ const Footer = () => {
                                 <Link to="#" className="text-reversed block footer-link">Contact Us</Link>
                             </div>
                             <div className="text-right">
-                                <Link to="#" className="text-reversed block footer-link">Web Design</Link>
-                                <Link to="#" className="text-reversed block footer-link">Web Migration</Link>
+                                <Link to="/services/web-design" className="text-reversed block footer-link">Web Design</Link>
+                                <Link to="/services/web-migration" className="text-reversed block footer-link">Web Migration</Link>
                                 <Link to="#" className="text-reversed block footer-link">Sysytem Operation</Link>
                             </div>
                         </div>
