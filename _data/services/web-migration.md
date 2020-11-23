@@ -4,6 +4,7 @@ path: /services/web-migration
 title: Lumincrove | Web Migraton Service | Plans & Pricing
 keywords:
 description: Website migration service with the best value for money...... making it faster does not mean making it more expensive.
+thumbnail: migration
 headingTitle: Web Migration
 subtitle: Finding the perfect personalized gift for grandma could be easy as you think. Show those grandmas in your life how much you care about him.
 services: [

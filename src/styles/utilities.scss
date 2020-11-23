@@ -204,7 +204,7 @@
 }
 
 .padding-bottom-small {
-  padding-bottom: $padding;
+  padding-bottom: $padding !important;
 }
 
 .padding-top {
@@ -212,7 +212,7 @@
 }
 
 .padding-top-small {
-  padding-top: $padding;
+  padding-top: $padding !important;
 }
 
 .padding-left {
@@ -225,6 +225,10 @@
 
 .padding-for-section {
   padding: 4em 2em;
+}
+
+.padding-default {
+  padding: 2em 1em;
 }
 
 /*buttons*/
@@ -267,15 +271,15 @@
 }
 
 /*icons*/
-.border-botton-primary {
+.border-bottom-primary {
   border-bottom: $primary-light 2px solid; 
 }
 
-.border-botton-soft-blue {
+.border-bottom-soft-blue {
   border-bottom: $soft-blue 2px solid; 
 }
 
-.border-botton-cta {
+.border-bottom-cta {
   border-bottom: $cta 2px solid;
 }
 

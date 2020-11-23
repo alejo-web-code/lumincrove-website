@@ -62,10 +62,10 @@ function Menu(props) {
                         </span>
                     </li>
                     <li className="menu-item padding-small">
-                        <Link to="#">Web Migration</Link>
+                        <Link to="/services/web-migration">Web Migration</Link>
                     </li>
                     <li className="menu-item padding-small">
-                        <Link to="#">Web Design</Link>
+                        <Link to="/services/web-design">Web Design</Link>
                     </li>
                     <li className="menu-item padding-small">
                         <Link to="#">System Operation</Link>

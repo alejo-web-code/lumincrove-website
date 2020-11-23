@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+.service-header {
+    height: 25vh;
+    justify-content: flex-end;
+}
+
+.offers-tabs {
+    border: $cta 1px solid;
+    line-height: 2 !important;
+    color: $cta;
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+
+    &:nth-child(2) {
+        margin: 0 1px;
+    }
+
+    &.selected {
+        background-color: $cta;
+        color: white;
+        padding-top: 5px;
+        line-height: 2.2 !important;
+    }
+}
+
+.service-list {
+    border: $cta 1px solid;
+
+    .service-list-heading {
+        border-bottom: $cta 1px solid;
+    }
+}
+
+@media screen and (min-width: $grid-small-breakpoint) {
+    .service-header {
+        justify-content: center;
+    }
+}
