@@ -17,7 +17,7 @@ export default function Template({
     let premiumRef = useRef(null);
     let customRef = useRef(null);
 
-    const [tabStyle, setTabStyle] = useState('premium')
+    const [tabStyle, setTabStyle] = useState('premium');
 
     const selectedTab = (e) => {
         if (e.currentTarget.id === 'premium') {
@@ -39,7 +39,16 @@ export default function Template({
             setTabStyle('custom')
         }
     }
-    
+
+    const customizeService = (e) => {
+        if (e.target.checked) {
+            e.target.parentElement.className = "list-item-selectable available margin-bottom-tiny"
+        }
+        else {
+            e.target.parentElement.className = "list-item-selectable margin-bottom-tiny"
+        }
+    }
+
     if (thumbnail === "design") {
         backgroundHeader = designPageImage.childImageSharp.fluid;
     }
@@ -53,8 +62,8 @@ export default function Template({
                 <html lang="en-US" />
                 <title>{title}</title>
                 <meta
-                name="description"
-                content={description}
+                    name="description"
+                    content={description}
                 />
                 <link rel="icon" type="imge/x-icon" href={favicon} />
             </Helmet>
@@ -67,10 +76,10 @@ export default function Template({
                 </div>
                 <div>
                     <div className="">
-                        <div id="standard" ref={standardRef} className="offers-tabs selected" onClick={selectedTab}>
+                        <div id="standard" ref={standardRef} className="offers-tabs" onClick={selectedTab}>
                             <span className="">Standard</span>
                         </div>
-                        <div id="premium" ref={premiumRef} className="offers-tabs" onClick={selectedTab}>
+                        <div id="premium" ref={premiumRef} className="offers-tabs selected" onClick={selectedTab}>
                             <span className="">Premium</span>
                         </div>
                         <div id="custom" ref={customRef} className="offers-tabs" onClick={selectedTab}>
@@ -81,11 +90,36 @@ export default function Template({
                         {services.map((service, index) => {
                             return (
                                 <div key={index}>
-                                    <h4 className="service-list-heading">{service.title}</h4>
+                                    <h4 className="service-list-heading text-bold">{service.title}</h4>
                                     <ul className="padding-top-small padding-bottom-small">
                                         {service.items.map((element, index2) => {
+                                            let listItemClass = "list-items margin-bottom-tiny";
+                                            let selectValue = '';
+
+                                            if (tabStyle === "standard" && element.premium === false) {
+                                                listItemClass += " available"
+                                            }
+                                            else if (tabStyle === "premium") {
+                                                listItemClass += " available"
+                                            }
+                                            else if (tabStyle === "custom") {
+                                                if (!element.premium) {
+                                                    listItemClass += " available"
+                                                }
+                                                else {
+                                                    listItemClass = "list-item-selectable margin-bottom-tiny"
+                                                    selectValue = (
+                                                        <input type="checkbox" className="input" onClick={customizeService} />
+                                                    )
+                                                }
+                                            }
+
+                                            if (index === 0 && index2 === 0) {
+                                                listItemClass += " text-bold"
+                                            }
+
                                             return (
-                                                <li key={index2}>{element.name}</li>
+                                                <li key={index2} className={listItemClass}>{selectValue}{element.name}</li>
                                             )
                                         })}
                                     </ul>
@@ -93,6 +127,7 @@ export default function Template({
                             )
                         })}
                     </div>
+
                 </div>
             </section>
         </Layout>
@@ -113,6 +148,7 @@ export const pageQuery = graphql`
                     items {
                         name
                         value
+                        premium
                     }
                 }
             }

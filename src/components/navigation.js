@@ -70,7 +70,7 @@ function Navigation() {
                                         <Link to="/services/web-design">Web Design</Link>
                                     </li>
                                     <li className="submenu-item padding-small">
-                                        <Link to="#">System Operation</Link>
+                                        <Link to="/services/system-operation">System Operation</Link>
                                     </li>
                                 </ul>
                             </div>

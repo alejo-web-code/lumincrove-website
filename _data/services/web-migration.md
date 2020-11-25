@@ -12,44 +12,59 @@ services: [
         title: Features,
         items: [
             {
-                name: SSL Certificate,
-                value: 300
-            },
-            {
-                name: Google Translate Service,
-                value: 20
-            },
-            {
-                name: Form high coverting lead generation,
-                value: 20
-            },
-            {
-                name: HTML5 Slider,
-                value: 20
-            },
-            {
-                name: HTML5 Banner,
-                value: 20
-            },
-            {
-                name: Comments session and comment storage,
-                value: 20
-            },
-            {
-                name: Chat bot,
-                value: 20
+                name: Hands off web migration process from your current website,
+                value: 20,
+                premium: false
             },
             {
                 name: Accesibility,
-                value: 20
+                value: 20,
+                premium: false
             },
                         {
                 name: Responsive Design,
-                value: 20
+                value: 20,
+                premium: false
+            },
+            {
+                name: HTML5 Banner,
+                value: 20,
+                premium: false
+            },
+            {
+                name: SSL Certificate,
+                value: 300,
+                premium: false
+            },
+            {
+                name: Google Translate Service,
+                value: 20,
+                premium: true
+            },
+            {
+                name: Form high coverting lead generation,
+                value: 20,
+                premium: true
+            },
+            {
+                name: HTML5 Slider,
+                value: 20,
+                premium: true
+            },
+            {
+                name: Comments session and comment storage,
+                value: 20,
+                premium: true
+            },
+            {
+                name: Chat bot,
+                value: 20,
+                premium: true
             },
             {
                 name: Professoinal template design,
-                value: 20
+                value: 20,
+                premium: true
             }
         ]
     },
@@ -58,27 +73,33 @@ services: [
         items: [
             {
                 name: SEO metadata,
-                value: 300
-            },
-            {
-                name: SEO frendly copy,
-                value: 20
+                value: 300,
+                premium: false
             },
             {
                 name: Advanced technical SEO (sitemapm, robot),
-                value: 300
+                value: 300,
+                premium: false
+            },
+            {
+                name: SEO frendly copy,
+                value: 20,
+                premium: true
             },
             {
                 name: SEO position tracking,
-                value: 20
+                value: 20,
+                premium: true
             },
             {
                 name: Competitive keyword,
-                value: 300
+                value: 300,
+                premium: true
             },
             {
                 name: Performance,
-                value: 20
+                value: 20,
+                premium: true
             }
         ]
     },
@@ -87,15 +108,18 @@ services: [
         items: [
             {
                 name: Site Hosting Service,
-                value: 300
+                value: 300,
+                premium: false
             },
             {
                 name: Google Storage service,
-                value: 300
+                value: 300,
+                premium: false
             },
             {
                 name: Integracion con BD del cliente,
-                value: 20
+                value: 20,
+                premium: true
             }
         ]
     },
@@ -104,19 +128,23 @@ services: [
         items: [
             {
                 name: Social Network Integration,
-                value: 20
+                value: 20,
+                premium: false
             },
             {
                 name: Google Analytics standard,
-                value: 20
+                value: 20,
+                premium: false
             },
             {
                 name: Google analitycs (goals and event tracking),
-                value: 20
+                value: 20,
+                premium: true
             },
             {
                 name: CMS System,
-                value: 20
+                value: 20,
+                premium: true
             }
         ]
     },
@@ -124,28 +152,34 @@ services: [
         title: Support,
         items: [
             {
-                name: Quarterly strategy & performance calls,
-                value: 20
-            },
-            {
                 name: Email technical support 24h,
-                value: 20
-            },
-            {
-                name: Calls technical support  24h,
-                value: 20
+                value: 20,
+                premium: false
             },
             {
                 name: On demand copy resource $/p,
-                value: 20
+                value: 20,
+                premium: false
             },
             {
                 name: On demand design resource $/h,
-                value: 20
+                value: 20,
+                premium: false
+            },
+            {
+                name: Quarterly strategy & performance calls,
+                value: 20,
+                premium: true
+            },
+            {
+                name: Calls technical support  24h,
+                value: 20,
+                premium: true
             },
             {
                 name: Monthly report (speed and system operation),
-                value: 20
+                value: 20,
+                premium: true
             }
         ]
     }
