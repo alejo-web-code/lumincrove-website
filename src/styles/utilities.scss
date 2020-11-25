@@ -21,6 +21,11 @@
   position: sticky;
   z-index: 2;
 
+  &.botton {
+    bottom: 0;
+    z-index: 1 !important;
+  }
+
   &.top {
     top: 0;
   }
@@ -146,6 +151,10 @@
   background-color: $white;
 }
 
+.bg-dark {
+  background-color: $text-dark-strong;
+}
+
 /*margings and padings*/
 .margin-large {
   margin: $margin-large
@@ -236,6 +245,7 @@
   background: transparent;
   border: none;
   padding: 9px 80px;
+  font-weight: $font-weight-semibold;
   
   &.button-menu {
     padding: 0;
@@ -352,7 +362,6 @@
     margin-bottom: $margin-small;
   }
 }
-
 
 /*Mobile styles*/
 @media screen and (max-width: $grid-medium-breakpoint) {
